@@ -12,7 +12,7 @@ const config = {
   title: '4D Qodly Pro Documentation',
   tagline: 'Easily build powerful, low-code web interfaces to elevate your 4D applications.',
   url: isProduction ? "https://developer.qodly.com" : "https://docqodly.github.io",
-  baseUrl: "/docs/",
+  baseUrl: "/docQodlyPro/",
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.svg',
