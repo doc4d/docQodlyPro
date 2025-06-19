@@ -1,0 +1,65 @@
+{
+  "name": "qodly",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "docusaurus": "docusaurus",
+    "start": "cross-env NODE_OPTIONS='--max-old-space-size=30000' docusaurus start",
+    "prebuild": "node prebuild.js docs/language/",
+    "prestart": "node prebuild.js docs/language/",
+    "prestart_watch": "node prebuild.js docs/language/",
+    "start_watch": "doc_preprocess --settings_type='start_watch'",
+    "syntax": "doc_preprocess --settings_type='build_syntax'",
+    "build": "cross-env NODE_OPTIONS='--max-old-space-size=30000' doc_preprocess && doc_preprocess --settings_type='build_versioned_docs' && doc_preprocess --settings_type='build_translate' && docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "clear": "docusaurus clear",
+    "serve": "docusaurus serve",
+    "write-translations": "docusaurus write-translations",
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "get-docs": "node ./scripts/get-docs",
+    "api:webform-editor": "npm run get-docs -- @ws-ui/webform-editor"
+  },
+  "dependencies": {
+    "@4dsas/doc_preprocessing": "1.1.7",
+    "@cmfcmf/docusaurus-search-local": "1.2.0",
+    "@docusaurus/core": "3.6",
+    "@docusaurus/faster": "3.6",
+    "@docusaurus/preset-classic": "3.6",
+    "@headlessui/react": "2.2.0",
+    "@heroicons/react": "2.2.0",
+    "@mdx-js/react": "3.1.0",
+    "clsx": "2.1.1",
+    "prism-react-renderer": "1.3.5",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@docusaurus/module-type-aliases": "3.6",
+    "autoprefixer": "^10.4.14",
+    "cross-env": "^7.0.3",
+    "postcss": "^8.4.23",
+    "tailwindcss": "^3.3.2"
+  },
+  "overrides": {
+    "@cmfcmf/docusaurus-search-local": {
+      "@docusaurus/core": "3.6",
+      "cheerio": "1.0.0-rc.12"
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "engines": {
+    "node": ">=16.14"
+  }
+}
