@@ -190,3 +190,34 @@ Each breakpoint entry includes an edit icon <img src={require('./img/managingBre
 ### Collapse/Expand Groups
 
 To improve readability when working with a large number of breakpoints, the sidebar includes a "Collapse All" button <img src={require('./img/managingBreakpoints12.png').default} style={{borderRadius: '6px', width:'30%'}} /> . This feature collapses all method or class sections, minimizing the visual footprint of the list and helping developers focus only on relevant groups.
+
+
+## Using Qodly debugger on 4D Server
+
+When using Qodly pages in a deployed 4D Server application (interpreted mode), you might encounter some cases where you need to debug your pages on the server, for example when a specific user configuration is required. In this case, you can attach the Qodly Studio debugger to the 4D Server and then, benefit from its features when executing your Qodly pages.
+
+Note that in this case, the Qodly Studio debugger will display all the code executed on the server, in accordance with the [attached debugger rule on 4D Server](https://developer.4d.com/docs/Debugging/debugging-remote#attached-debugger).  
+
+To attach the Qodly Studio debugger to your running 4D Server application:
+
+1. Open Qodly Studio from 4D Server.
+
+:::note
+
+The project must be running in interpreted mode so that **Qodly Studio** menu item is available.
+
+:::
+
+2. In the Qodly Studio toolbar, click on the **Debug** button.<br/>
+![qodly-debug](./img/qodly-debug.png)
+
+If the debug session starts successfully, a green bullet appears on the button label ![qodly-debug](./img/debug2.png) and you can use the Qodly Studio debugger.
+
+If the debugger is already attached to a another machine or another Qodly Studio page, an error is displayed. You have to detach it beforehand from the other location.
+
+To detach the Qodly Studio debugger from your running 4D Server application:
+
+1. Click the **Debug** button in the Qodly Studio toolbar while a debug session is active.
+A warning dialog box will prompt you to confirm whether you want to detach the debugger.
+2. Select **Keep in progress** to continue evaluating the code until the end of the current method or function before detaching the debugger, or **Stop** to detach the debugger immediately.
+

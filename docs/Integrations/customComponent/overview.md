@@ -3,7 +3,7 @@ id: overview
 title: Overview
 ---
 
-Qodly introduces the concept of **Custom Components**, empowering developers to extend the capabilities of the platform and tailor Pages to their specific needs.
+Qodly Studio supports the concept of **Custom Components**, empowering developers to extend the capabilities of the platform and tailor Pages to their specific needs.
 
 ## What Are Custom Components?
 

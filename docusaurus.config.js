@@ -159,6 +159,12 @@ Thank you for helping us improve! 🚀
             position: 'left',
             label: 'Develop',
           },
+          {
+            type: 'doc',
+            docId: '4DQodlyPro/deploy',
+            position: 'left',
+            label: 'Render & Deploy',
+          },
           // Custom Component
           {
             type: 'doc',

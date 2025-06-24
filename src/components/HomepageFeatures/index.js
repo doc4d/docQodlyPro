@@ -10,7 +10,7 @@ const FeatureList = [
     Svg: require('@site/static/img/q-get-started.svg').default,
     description: (
       <>
-        Connect to Qodly Studio and unlock a world of app-building possibilities.s
+        Discover Qodly Studio and unlock a world of app-building possibilities.
       </>
     ),
 		link: "4DQodlyPro/gettingStarted"
@@ -20,24 +20,36 @@ const FeatureList = [
     Svg: require('@site/static/img/q-dev.svg').default,
     description: (
       <>
-        Design and build powerful business apps with intuitive, browser-based tools.
+        Use Qodly Studio to design and build powerful business apps.
       </>
     ),
 	link: "4DQodlyPro/qodlyStudioInterface"
   },
   {
-    title: 'Deploy',
+    title: 'Render & Deploy',
     Svg: require('@site/static/img/q-dep-run-mng.svg').default,
     description: (
       <>
         Seamlessly integrate and deploy Qodly pages within your 4D environment.
       </>
     ),
-		link: "cloud/consoleOverview"
+		link: "4DQodlyPro/deploy"
   },
+  /*
+  {
+    title: 'Custom Components',
+    Svg: require('@site/static/img/q-dep-run-mng.svg').default,
+    description: (
+      <>
+        Extend Qodly Studio with your own components.
+      </>
+    ),
+		link: "Integrations/customComponents/overview"
+  },
+  */
   {
     title: 'Cloud',
-    Svg: require('@site/static/img/q-dev.svg').default,
+    Svg: require('@site/static/img/qodly-cloud.svg').default,
     description: (
       <>
         Take your Qodly apps to the next level with our all-in-one cloud platform — develop, launch, and monitor from anywhere.

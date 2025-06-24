@@ -132,6 +132,26 @@ const sidebars = {
 		}, 
 	],
 	// Qodly Cloud
+	Deploy: [
+		
+		{
+			type: 'doc',
+			id: '4DQodlyPro/deploy',
+		},
+		{
+			type: 'doc',
+			id: '4DQodlyPro/rendering',
+		},
+		{
+			type: 'doc',
+			id: '4DQodlyPro/force-login',
+		},	
+		{
+			type: 'doc',
+			id: '4DQodlyPro/license',
+		},		
+	],
+
 	QodlyCloud: [
 		{
 			type: 'doc',
