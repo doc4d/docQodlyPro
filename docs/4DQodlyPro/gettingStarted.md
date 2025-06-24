@@ -7,7 +7,7 @@ title: Getting Started
 
 You can use Qodly Studio directly from your **4D environment** to build modern and sophisticated interfaces that you can easily integrate to your existing 4D projects and deploy **on premise**.
 
-Qodly Studio can also be used in the [**Qodly Cloud platform**](https://qodly.com), dedicated to the development of web business applications.
+Qodly Studio can also be used in the [**Qodly Cloud platform**](https://qodly.com), dedicated to the development of web business applications (see the [**Qodly Cloud**](../QodlyinCloud/quickstart.md) section of the documentation for more information).
 
 Qodly Studio proposes a full-featured web UI, allowing you to:
 

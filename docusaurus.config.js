@@ -179,6 +179,11 @@ Thank you for helping us improve! 🚀
             position: 'right',
             //dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
             dropdownActiveClassDisabled: true,
+            versions: 
+            {
+              current: {label: 'next'},
+              'R10': {label: '20 R10'},
+            },
             dropdownItemsAfter: [
               {
                 type: 'html',

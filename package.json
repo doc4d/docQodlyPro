@@ -23,9 +23,9 @@
   "dependencies": {
     "@4dsas/doc_preprocessing": "1.1.7",
     "@cmfcmf/docusaurus-search-local": "1.2.0",
-    "@docusaurus/core": "3.6",
-    "@docusaurus/faster": "3.6",
-    "@docusaurus/preset-classic": "3.6",
+    "@docusaurus/core": "^3.8.1",
+    "@docusaurus/faster": "^3.8.1",
+    "@docusaurus/preset-classic": "^3.8.1",
     "@headlessui/react": "2.2.0",
     "@heroicons/react": "2.2.0",
     "@mdx-js/react": "3.1.0",
@@ -35,7 +35,7 @@
     "react-dom": "18.3.1"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "3.6",
+    "@docusaurus/module-type-aliases": "^3.8.1",
     "autoprefixer": "^10.4.14",
     "cross-env": "^7.0.3",
     "postcss": "^8.4.23",
