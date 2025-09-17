@@ -1,6 +1,6 @@
 ---
 id: gettingStarted
-title: Getting Started
+title: Welcome
 ---
 
 **Qodly Studio** is an interface builder for web applications. It provides developers with a graphical page editor to design applications running in web browsers or smartphones. It supports natively the [ORDA objects](https://developer.4d.com/docs/ORDA/overview).
@@ -138,15 +138,15 @@ You will then be prompted to enter the [access key](https://developer.4d.com/doc
 
 The following commands and classes are dedicated to the server-side management of Qodly pages:
 
-- [`Web Form`](../QodlyinCloud/qodlyScript/WebFormClass.md#web-form) command: returns the Qodly page as an object.
-- [`Web Event`](../QodlyinCloud/qodlyScript/WebFormClass.md#web-event) command: returns events triggered within Qodly page components.
+- [`Web Form`](../QodlyinCloud/qodlyScript/commands/webForm.md) command: returns the Qodly page as an object.
+- [`Web Event`](../QodlyinCloud/qodlyScript/commands/webEvent.md) command: returns events triggered within Qodly page components.
 - [`WebForm`](../QodlyinCloud/qodlyScript/WebFormClass.md) class: functions and properties to manage the rendered Qodly page.
 - [`WebFormItem`](../QodlyinCloud/qodlyScript/WebFormItemClass.md) class: functions and properties to manage Qodly page components.
 
 
 ### Using project methods
 
-We recommend using class functions over project methods. Only class functions can be called from components. However, you can still use your project methods in Qodly Studio in two ways:
+We recommend using class functions over project methods. Only class functions can be called from [components](../4DQodlyPro/pageLoaders/components/componentsBasics.md). However, you can still use your project methods in Qodly Studio in two ways:
 
 - You can call your methods from class functions.
 - You can directly [execute your methods](../4DQodlyPro/coding.md#method-and-function-management) from the Qodly Explorer.
@@ -221,156 +221,3 @@ You can preview your Qodly application at any moment by selecting the **Preview 
 This command launches the Qodly renderer on a local address in your default browser and displays the **start page** [defined in the Application settings](https://developer.qodly.com/docs/studio/settings#start-page) of Qodly Studio.
 
 
-
-
-
-
-
-## Force login
-
-With Qodly Studio for 4D, the ["force login" mode](https://developer.4d.com/docs/REST/authUsers#force-login-mode) allows you to control the number of opened web sessions that require 4D Client licenses. You can also [logout](#logout) the user at any moment to decrement the number of retained licenses.
-
-### Configuration
-
-Make sure the ["force login" mode](https://developer.4d.com/docs/REST/authUsers#force-login-mode) is enabled for your 4D application in the [Roles and Privileges page](https://developer.qodly.com/docs/studio/roles/rolesPrivilegesOverview), using the **Force login** option:
-
-![alt-text](./img/forcelogin.png)
-
-You can also set this option directly in the [**roles.json** file](https://developer.4d.com/docs/ORDA/privileges#rolesjson-file).
-
-You just need then to implemented the [`authentify()`](https://developer.4d.com/docs/REST/authUsers#function-authentify) function in the datastore class and call it from the Qodly page. A licence will be consumed only when the user is actually logged.
-
-
-:::note Compatibility
-
-When the legacy login mode ([deprecated as of 4D 20 R6](https://blog.4d.com/force-login-becomes-default-for-all-rest-auth)) is enabled, any REST request, including the rendering of an authentication Qodly page, creates a web session on the server and gets a 4D Client license, whatever the actual result of the authentication. For more information, refer to [this blog post](https://blog.4d.com/improved-4d-client-licenses-usage-with-qodly-studio-for-4d) that tells the full story.  
-
-:::
-
-#### Example
-
-In a simple Qodly page with login/password inputs, a "Submit" button calls the following `authentify()` function we have implemented in the DataStore class:
-
-<Tabs>
-  <TabItem value="4D" label="4D" default>
-    ```4d
-	exposed Function authentify($credentials : Object) : Text
-		var $salesPersons : cs.SalesPersonsSelection
-		var $sp : cs.SalesPersonsEntity
-
-		$salesPersons:=ds.SalesPersons.query("identifier = :1"; $credentials.identifier)
-		$sp:=$salesPersons.first()
-
-		If ($sp#Null)
-			If (Verify password hash($credentials.password; $sp.password))
-				Session.clearPrivileges()
-				Session.setPrivileges("") //guest session
-
-				return "Authentication successful"
-			Else
-				return "Wrong password"
-			End if
-		Else
-			return "Wrong user"
-		End if
-	```
-  </TabItem>
-  <TabItem value="qs" label="QodlyScript">
-    ```qs
-    exposed function authentify(credentials : Object) : string
-		var salesPersons : cs.SalesPersonsSelection
-		var sp : cs.SalesPersonsEntity
-
-		salesPersons=ds.SalesPersons.query("identifier = :1", credentials.identifier)
-		sp = salesPersons.first()
-
-		if (sp!=Null)
-			if (verifyPasswordHash(credentials.password, sp.password))
-				session.clearPrivileges()
-				session.setPrivileges("") //guest session
-
-				return "Authentication successful"
-			else
-				return "Wrong password"
-			end
-		else
-			return "Wrong user"
-		end
-    ```
-  </TabItem>
-</Tabs>
-
-This call is accepted and as long as the authentication is not successful, `Session.setPrivileges()` is not called, thus no license is consumed. Once `Session.setPrivileges()` is called, a 4D client licence is used and any REST request is then accepted.
-
-
-
-### Logout
-
-When the ["force login" mode is enabled](#force-login), Qodly Studio for 4D allows you to implement a logout feature in your application.
-
-To logout the user, you just need to execute the **Logout** standard action from the Qodly page. In Qodly Studio, you can associate this standard action to a button for example:
-
-![alt-text](./img/logout.png)
-
-Triggering the logout action from a web user session has the following effects:
-
-- the current web user session loses its privileges, only [descriptive REST requests](https://developer.4d.com/docs/REST/authUsers#descriptive-rest-requests) are allowed,
-- the associated 4D license is released,
-- the `Session.storage` is kept until the web session inactivity timeout is reached (at least one hour). During this period after a logout, if the user logs in again, the same session is used and the `Session.storage` shared object is available with its current contents.
-
-
-
-
-## About license usage for rendering
-
-In default mode when any page is rendered, or in "force login" mode when a page handling data or calling a function is rendered, you must have an available license, as rendering Qodly forms targets the project database's main web server.
-
-### URL Schemes
-
-Qodly Studio's URL scheme configuration (HTTP and HTTPS) determines how many licenses are retained when rendering Qodly forms. With the appropriate configuration, you can avoid unnecessary license retaining.
-
-As explained in the [configuration](#configuration) section, the WebAdmin web server provides a secured web access to Qodly Studio. On the other hand, the [renderer](#enabling-rendering) communicates with the 4D web server of the database using REST requests. As such, it behaves like a conventional 4D Client.
-
-If you run the renderer from the Qodly Studio and these two web servers are not reached through the same URL scheme (HTTP or HTTPS), it might lead to wrong licence counting.
-
-:::info
-
-Using different schemes might also lead to [session](https://developer.4d.com/docs/commands/session) issues, such as losing [privileges](https://developer.4d.com/docs/ORDA/privileges) after a page refresh.
-
-:::
-
-#### Example
-
-1. You run the Qodly Studio on an HTTPS URL scheme (e.g. `https://127.0.0.1:7443/studio/`)
-
-2. The web server of your database is started only on an HTTP port.
-
-![alt-text](./img/schemes.png)
-
-3. In Qodly Studio, you click on the **Preview** icon. You are warned that the two web servers are started on different schemes, but despite this you click on the **Confirm** button.
-
-![alt-text](./img/render-button.png)
-
-As a result, two licenses are retained.
-
-:::note
-
-You can enable/disable the display of the renderer pop over using a Qodly Studio user setting.
-
-:::
-
-### SameSite attribute
-
-The behavior previously described is due to the session cookie of the 4D web server. This session cookie has a `SameSite` attribute that determines if the session cookie is sent to the web server.
-
-If the `SameSite` attribute's value is `Strict` (default), the session cookie is not sent to the web server, so a new session is opened each time a page is rendered or refreshed.
-
-For more information on the `SameSite` attribute, check out [this blog post](https://blog.4d.com/get-ready-for-the-new-SameSite-and-secure-attributes-for-cookies/).
-
-### Recommendations
-
-To avoid using more licenses than necessary, we recommend doing one of the following:
-
-- Run the renderer on another browser tab (by entering the rendered URL of your Qodly page: `IP:port/$lib/renderer/?w=QodlyPageName`).
-- Ensure the Qodly Studio and your database are reached on the same URL scheme.
-- Use the `Lax` value for the [session cookie](https://developer.4d.com/docs/WebServer/webServerConfig.html#session-cookie-samesite) of your project database's web server.

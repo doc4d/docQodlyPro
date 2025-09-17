@@ -154,12 +154,14 @@ const sidebars = {
 
 	QodlyCloud: [
 		{
-			type: 'doc',
-			id: 'QodlyinCloud/quickstart'
-		},
-		{
 			type: 'category',
 			label: 'Cloud Overview',
+				collapsible: true,
+				collapsed: true,
+				link: {
+					type: 'doc',
+					id: 'QodlyinCloud/quickstart',
+				},
 			items: ['QodlyinCloud/getStarted/first-app',
 				'QodlyinCloud/getStarted/test-debug',
 				'QodlyinCloud/getStarted/deployment',
