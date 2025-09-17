@@ -31,13 +31,10 @@ Qodly Studio supports the following web browsers:
 
 The recommended resolution is 1920x1080.
 
-#### 4D application
-
-- Development: 4D v20 R2 or higher
-- Deployment: 4D Server v20 R2 or higher
-- Qodly Studio only works with 4D projects (binary databases are not supported).
 
 #### Project
+
+Qodly Studio only works with 4D projects (binary databases are not supported).
 
 - Web sessions (*aka* Scalable sessions) must [be enabled](https://developer.4d.com/docs/WebServer/sessions#enabling-web-sessions).
 - The 4D code called by Qodly forms must be [thread-safe](https://developer.4d.com/docs/WebServer/preemptiveWeb).
@@ -56,7 +53,7 @@ In addition, you need to explicitly designate every project that can be accessed
 
 ### One-click configuration
 
-All the [above configuration requirements](#requirements) can be automatically set for you in one click when you select the  **Qodly Studio...** menu command from the **Design** menu (4D single-user) or the **Window** menu (4D Server) for the first time. Any requirements that are not met are listed in a dialog box and will be automatically adjusted if you click the **Enable settings** button. 
+All the [configuration requirements](#requirements) can be automatically set for you in one click when you select the **Qodly Studio...** menu command from the **Design** menu in 4D single-user for the first time. Any requirements that are not met are listed in a dialog box and will be automatically adjusted if you click the **Enable settings** button. 
 
 ![alt-text](./img/enable-settings.png)
 
@@ -70,6 +67,8 @@ Since scalable sessions run in preemptive mode, enabling this setting might requ
 ### Activating authentication
 
 Authentication on the WebAdmin web server is granted using an access key. For more details, see [Access key](https://developer.4d.com/docs/Admin/webAdmin#access-key).
+
+In case of [access through 4D](#from-the-4d-application), an access key is transparently provided.  
 
 
 ### Development and deployment
@@ -96,14 +95,19 @@ There are two ways to access Qodly Studio:
 - by selecting the **Qodly Studio...** menu command from your 4D application,
 - by entering directly an url in a browser. 
 
-### From the 4D application
-
-When opening Qodly Studio from your 4D application, for the first launch you can benefit from the [one-click configuration dialog box](#one-click-configuration) to automatically configure all necessary settings.
-
+### From a 4D application
 
 Select the **Qodly Studio...** menu command from the **Design** menu (4D single-user) or the **Window** menu (4D Server).
 
 Depending on the WebAdmin web server configuration, your default browser opens at `IPaddress:HTTPPort/studio` or `IPaddress:HTTPSPort/studio`. 
+
+:::note
+
+When opening Qodly Studio from your 4D single-user application for the first time, you can benefit from the [one-click configuration dialog box](#one-click-configuration) to automatically configure all necessary settings.
+
+:::
+
+
 
 ### On a browser
 
