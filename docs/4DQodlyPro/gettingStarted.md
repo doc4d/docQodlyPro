@@ -36,43 +36,35 @@ The recommended resolution is 1920x1080.
 - Development: 4D v20 R2 or higher
 - Deployment: 4D Server v20 R2 or higher
 - Qodly Studio only works with 4D projects (binary databases are not supported).
+
+#### Project
+
 - Web sessions (*aka* Scalable sessions) must [be enabled](https://developer.4d.com/docs/WebServer/sessions#enabling-web-sessions).
 - The 4D code called by Qodly forms must be [thread-safe](https://developer.4d.com/docs/WebServer/preemptiveWeb).
 
 
-### Enabling access to Qodly Studio
+#### Web Server & WebAdmin Server
 
-By default, access to Qodly Studio is not granted.
-
-Qodly Studio is served by the [WebAdmin web server](https://developer.4d.com/docs/Admin/webAdmin) and displays data from 4D projects handled by the [4D web server](https://developer.4d.com/docs/WebServer/overview).
-
-To enable access to Qodly Studio, you must explicitly allow it at two levels:
-
-* at 4D application level
-* at project level
+Qodly Studio is served by the [WebAdmin web server](https://developer.4d.com/docs/Admin/webAdmin) and access data from 4D projects exposed as [REST servers](https://developer.4d.com/docs/REST/configuration) and handled by the [4D web server](https://developer.4d.com/docs/WebServer/overview). **All these servers must be launched**. If one of these levels are not enabled, access to Qodly Studio is denied (a 403 page is returned).
 
 
-If one of the two levels (or both) are not enabled, access to Qodly Studio is denied (a 403 page is returned).
 
-#### At 4D level
+You need to [**enable access to Qodly Studio** on the WebAdmin web server](https://developer.4d.com/docs/Admin/webAdmin#enable-access-to-qodly-studio). This setting applies to the 4D application (4D or 4D Server) on the host machine. All projects opened with that 4D application take this setting into account.
 
-As a first security level, you need to [allow access to Qodly Studio on the WebAdmin web server](https://developer.4d.com/docs/Admin/webAdmin#enable-access-to-qodly-studio). This setting applies to the 4D application (4D or 4D Server) on the host machine. All projects opened with that 4D application take this setting into account.
+In addition, you need to explicitly designate every project that can be accessed. The **Enable access to Qodly Studio** option must be enabled on the [Web Features page of the 4D application's Settings](https://developer.4d.com/docs/settings/web#enable-access-to-qodly-studio). Keep in mind that [user settings](https://developer.4d.com/docs/settings/overview) can be defined at several levels, and that priorities apply.
 
-Keep this option unchecked if you want to make sure no access to Qodly Studio is allowed on the application. Check this option to make it possible to access Qodly Studio. However, you still need to enable it at every project level.
 
-Additionally, you can [configure the WebAdmin web server's HTTP/HTTPS port used](https://developer.4d.com/docs/Admin/webAdmin#accept-http-connections-on-localhost).
+### One-click configuration
+
+All the [above configuration requirements](#requirements) can be automatically set for you in one click when you select the  **Qodly Studio...** menu command from the **Design** menu (4D single-user) or the **Window** menu (4D Server) for the first time. Any requirements that are not met are listed in a dialog box and will be automatically adjusted if you click the **Enable settings** button. 
+
+![alt-text](./img/enable-settings.png)
 
 :::note
 
-After any change to these settings, you must [restart the WebAdmin web server](https://developer.4d.com/docs/Admin/webAdmin#start-and-stop) for the new configuration to be effective.
+Since scalable sessions run in preemptive mode, enabling this setting might require that you evaluate the thread-safety property of your code. 
 
 :::
-
-#### At project level
-
-After you have enabled access to Qodly Studio at the 4D level, you need to explicitly designate every project that can be accessed. The **Enable access to Qodly Studio** option must be enabled on the [Web Features page of the 4D application's Settings](https://developer.4d.com/docs/settings/web#enable-access-to-qodly-studio).
-
-Keep in mind that [user settings](https://developer.4d.com/docs/settings/overview) can be defined at several levels, and that priorities apply.
 
 
 ### Activating authentication
@@ -97,25 +89,42 @@ You can open Qodly Studio, [debug](#using-qodly-debugger-on-4d-server) and edit 
 
 ## Opening Qodly Studio
 
-The Qodly Studio page is available when the [WebAdmin web server is running](https://developer.4d.com/docs/Admin/webAdmin#start-and-stop) and authentication is activated (see above).
+The Qodly Studio page is available when [all requirements](#requirements) are met.
 
 There are two ways to access Qodly Studio:
 
-* by selecting the **Qodly Studio...** menu command from the **Design** menu (4D single-user) or the **Window** menu (4D Server).
-If the WebAdmin web server is already running, depending on its configuration, your default browser opens at `IPaddress:HTTPPort/studio` or `IPaddress:HTTPSPort/studio`. Otherwise, you will be prompted if you want to start the WebAdmin web server first.
+- by selecting the **Qodly Studio...** menu command from your 4D application,
+- by entering directly an url in a browser. 
 
-* on a browser, with the WebAdmin web server running (launched from 4D or 4D Server), enter the following address:<br/>
-	`IPaddress:HTTPPort/studio`
+### From the 4D application
 
-	or:
+When opening Qodly Studio from your 4D application, for the first launch you can benefit from the [one-click configuration dialog box](#one-click-configuration) to automatically configure all necessary settings.
 
-	`IPaddress:HTTPSPort/studio`
 
-	For example, after launching a local web server on port 7080, type this address in your browser:
+Select the **Qodly Studio...** menu command from the **Design** menu (4D single-user) or the **Window** menu (4D Server).
 
-	`localhost:7080/studio`
+Depending on the WebAdmin web server configuration, your default browser opens at `IPaddress:HTTPPort/studio` or `IPaddress:HTTPSPort/studio`. 
 
-	You will then be prompted to enter the [access key](https://developer.4d.com/docs/Admin/webAdmin#access-key) to access Qodly Studio.
+### On a browser
+
+When opening Qodly Studio on a browser, you need to make sure all necessary [requirements](#requirements) have been configured. 
+
+with the WebAdmin web server running (launched from 4D or 4D Server), enter the following address:
+
+```
+IPaddress:HTTPPort/studio
+```
+or:
+
+```
+IPaddress:HTTPSPort/studio
+```
+
+For example, after launching a local web server on port 7080, type this address in your browser:
+
+`localhost:7080/studio`
+
+You will then be prompted to enter the [access key](https://developer.4d.com/docs/Admin/webAdmin#access-key) to access Qodly Studio.
 
 
 
