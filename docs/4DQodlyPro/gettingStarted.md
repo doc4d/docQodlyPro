@@ -59,7 +59,8 @@ All the [configuration requirements](#requirements) can be automatically set for
 
 :::note
 
-Since scalable sessions run in preemptive mode, enabling this setting might require that you evaluate the thread-safety property of your code. 
+- Only settings that need to be edited are listed in the dialog box. 
+- Since scalable sessions run in preemptive mode, enabling this setting might require that you evaluate the thread-safety property of your code. 
 
 :::
 
