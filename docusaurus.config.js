@@ -5,7 +5,8 @@ const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 const ghUrl = `${process.env.GITHUB_SERVER_URL || 'https://github.com'}/${process.env.GITHUB_REPOSITORY || 'qodly/docs'}`;
-const isProduction = process.env.GITHUB_REPOSITORY_OWNER === 'qodly';
+//const isProduction = process.env.GITHUB_REPOSITORY_OWNER === 'qodly';
+const isProduction = process.env.GITHUB_REPOSITORY_OWNER === '4d';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
