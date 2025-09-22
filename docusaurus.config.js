@@ -12,8 +12,8 @@ const config = {
   title: '4D Qodly Pro Documentation',
   tagline: 'Easily build powerful, low-code web interfaces to elevate your 4D applications.',
   url: isProduction ? "https://developer.qodly.com" : "https://docqodly.github.io",
-   // baseUrl: isProduction ? "/qodly/" : "/docQodlyPro/",
-  baseUrl: "/qodly/",
+  baseUrl: isProduction ? "/qodly/" : "/docQodlyPro/",
+  // baseUrl: "/qodly/",
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.svg',
@@ -80,7 +80,7 @@ const config = {
           path: 'docs',
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          
+          includeCurrentVersion: isProduction ? false : true, // false for prod only
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl: isProduction ? `${ghUrl}/edit/main`: undefined,
@@ -102,7 +102,6 @@ Thank you for helping us improve! 🚀
             return `https://github.com/qodly/docs/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`
           },
           
-          includeCurrentVersion: isProduction ? false : true, // false for prod only
         },
         blog: {
           //  showReadingTime: true,
