@@ -5,7 +5,8 @@ const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 const ghUrl = `${process.env.GITHUB_SERVER_URL || 'https://github.com'}/${process.env.GITHUB_REPOSITORY || 'qodly/docs'}`;
-const isProduction = process.env.GITHUB_REPOSITORY_OWNER === 'qodly';
+//const isProduction = process.env.GITHUB_REPOSITORY_OWNER === 'qodly';
+const isProduction = process.env.GITHUB_REPOSITORY_OWNER === '4d';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -13,6 +14,7 @@ const config = {
   tagline: 'Easily build powerful, low-code web interfaces to elevate your 4D applications.',
   url: isProduction ? "https://developer.qodly.com" : "https://docqodly.github.io",
   baseUrl: isProduction ? "/qodly/" : "/docQodlyPro/",
+  // baseUrl: "/qodly/",
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.svg',
