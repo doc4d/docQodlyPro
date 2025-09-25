@@ -34,9 +34,10 @@ The recommended resolution is 1920x1080.
 
 #### Project
 
-Qodly Studio only works with 4D projects (binary databases are not supported).
+Qodly Studio only works with 4D [projects](https://developer.4d.com/docs/Project/overview) (binary databases are not supported).
 
 - Web sessions (*aka* Scalable sessions) must [be enabled](https://developer.4d.com/docs/WebServer/sessions#enabling-web-sessions).
+- The ["forceLogin" mode](https://developer.4d.com/docs/REST/authUsers#force-login-mode) must be [activated](https://developer.4d.com/docs/settings/web#activate-rest-authentication-through-dsauthentify-function) to handle web sessions.
 - The 4D code called by Qodly forms must be [thread-safe](https://developer.4d.com/docs/WebServer/preemptiveWeb).
 
 
@@ -60,7 +61,8 @@ All the [configuration requirements](#requirements) can be automatically set for
 :::note
 
 - Only settings that need to be edited are listed in the dialog box. 
-- Since scalable sessions run in preemptive mode, enabling this setting might require that you evaluate the thread-safety property of your code. 
+- Since scalable sessions run in preemptive mode, enabling this setting might require that you evaluate the [thread-safety property](https://developer.4d.com/docs/Develop/preemptive-processes#writing-a-thread-safe-method) of your code. 
+- Activating the "forceLogin" mode might require that you reconfigure the REST accesses, [as explained in this blog post](https://blog.4d.com/force-login-becomes-default-for-all-rest-auth/). 
 
 :::
 
@@ -170,7 +172,7 @@ Qodly Studio encapsulates Qodly pages, including layout, data connections, and e
 
 :::info
 
-See [this page](../4DQodlyPro/rendering.md) for detailed information on how to render Qodly pages in Qodly.
+See [this section](../4DQodlyPro/rendering.md) for detailed information on how to render Qodly pages in Qodly.
 
 :::
 
