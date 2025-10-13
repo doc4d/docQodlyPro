@@ -3,6 +3,10 @@
 		{
 			"type": "doc",
 			"id": "4DQodlyPro/gettingStarted"
+		},
+		{
+			"type": "doc",
+			"id": "4DQodlyPro/release-notes"
 		}
 	],
 	"Develop": [
@@ -99,11 +103,6 @@
 			"type": "doc",
 			"id": "4DQodlyPro/httpHandlers",
 			"label": "HTTP Handlers"
-		},
-		{
-			"type": "doc",
-			"id": "4DQodlyPro/localization",
-			"label": "Localization (i18n)"
 		},
 		{
 			"type": "doc",

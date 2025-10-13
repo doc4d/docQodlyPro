@@ -10,40 +10,10 @@ Qodly is a groundbreaking hybrid **low-code** application development platform t
 While Qodly empowers you with its low-code capabilities, there are situations where coding expertise becomes essential. Within Qodly Studio, you'll harness the power of [events](pageLoaders/events/bindingActionToEvents.md) in combination with class functions to effectively manage the intricacies of your web application.
 
 
-## Coding Structures
 
-In **QodlyScript**, you can structure your code using two fundamental constructs: methods and classes.
+## Handling methods and classes from Qodly Studio
 
-
-### Methods
-
-[Methods](../QodlyinCloud/qodlyScript/basics/lang-methods.md) are isolated blocks of code that serve various functions within your application. They can be invoked from class functions or other methods but cannot be directly accessed from components.
-
-
-### Classes
-
-[Classes](../QodlyinCloud/qodlyScript/basics/lang-classes.md) allow you to organize your code around objects. Only class functions can be accessed from components. Qodly offers two main types of classes: **ORDA classes** and **user classes**.
-
-
-#### ORDA Classes
-
-[ORDA Classes](../QodlyinCloud/qodlyScript/guides/data-model.md) are used to configure the data model and implement business logic. ORDA classes are automatically available (empty by default) in the [Explorer](./qodlyStudioInterface.md#qodly-studio-home-page):
-
-- The [DataStore class](../QodlyinCloud/qodlyScript/guides/data-model.md#datastore) is always displayed in first position.
-- Dataclass names are listed along with icons that you can expand/collapse. When expanded, a dataclass gives access to its related [DataClass class](../QodlyinCloud/qodlyScript/guides/data-model.md#dataclass-class), [Entity class](../QodlyinCloud/qodlyScript/guides/data-model.md#entity-class), and [Entity selection class](../QodlyinCloud/qodlyScript/guides/data-model.md#entity-class).
-
-Non-created element names appear in light grey. To create an ORDA class, just click on the element: its name is then displayed in white. When you delete an ORDA class, the code is removed and the element name gets back to a light grey color.
-
-<img src={require('./img/qodly-classes.png').default} style={{borderRadius: '6px'}} />
-
-#### User Classes
-
-User classes are used for controlling component behavior or any part of your application, without no specific connection to the data model. User classes can declare functions and properties. [Singleton classes](../QodlyinCloud/qodlyScript/basics/lang-classes.md#singleton-classes) are user classes.
-
-
-## Method and Function Management
-
-When working with methods and classes in Qodly, it's essential to understand how to create, duplicate, rename, and delete them. Here's how you can effectively manage these aspects:
+You can create, duplicate, rename, and delete 4D methods and classes directly from Qodly Studio. 
 
 ### Creating
 
