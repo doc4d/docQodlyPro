@@ -190,6 +190,7 @@ Thank you for helping us improve! 🚀
             versions: 
             {
               current: {label: 'next'},
+              '21': {label: '21 BETA'},
               'R10': {label: '20 R10'},
             },
             dropdownItemsAfter: [
