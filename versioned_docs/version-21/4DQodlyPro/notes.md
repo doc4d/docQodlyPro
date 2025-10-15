@@ -5,7 +5,7 @@ title: Release Notes
 
 
 
-## 4D Qodly Pro 21
+## 4D 21
 
 ### Highlights
 
@@ -15,15 +15,11 @@ title: Release Notes
 
 - [Events Report](pageLoaders/pageLoaderOverview.md#events-report): Introduced the Events Report, a visual overview of all page events for components and Qodly sources complete with filtering, editing, and navigation options.
 
-... more to come ....
+... more to come...
 
 
-### Behavior Changes
 
-... more to come ....
-
-
-## 4D Qodly Pro 20 R10
+## 4D 20 R10
 
 ### Highlights
 
