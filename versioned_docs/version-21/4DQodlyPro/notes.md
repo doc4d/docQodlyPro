@@ -11,6 +11,10 @@ title: Release Notes
 
 - [Localization (i18n)](./localization.md): Launched built-in Localization support, allowing you to create multilingual applications visually—without coding. You can define supported locales, manage translation keys and literals, preview translations directly in the Studio, and allow users to switch languages at runtime using the [UserLanguage](pageLoaders/qodlySources.md#qodlysource-userlanguage) shared source.
 
+- [Page Zoom Controls](pageLoaders/pageLoaderOverview.md#page-zoom-controls): in the header panel, allowing users to adjust the page’s zoom level for more precise component placement and layout editing.
+
+- [Events Report](pageLoaders/pageLoaderOverview.md#events-report): Introduced the Events Report, a visual overview of all page events for components and Qodly sources complete with filtering, editing, and navigation options.
+
 ... more to come ....
 
 

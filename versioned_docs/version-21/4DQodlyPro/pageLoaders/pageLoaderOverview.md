@@ -156,6 +156,36 @@ The Sanity Check serves as an informative tool. Even if errors are present, a Pa
 
 The Qodly Sources Color button <img alt="Dialog Icon" src={require('./img/headerPanel_dtscolor.png').default} style={{borderRadius: '6px', width: '3%'}} /> in the header panel allows easy identification of the background color of qodlysources linked to a component.
 
+### Page Zoom Controls
+
+The Zoom controls in the header panel <img alt="Zoom Controls" src={require('./img/zoom-controls.png').default} style={{borderRadius: '6px', width: '12%'}} /> lets users adjust the page’s zoom level. This helps when positioning components precisely within complex or tightly spaced layouts. By increasing or decreasing the zoom, users can focus on fine details or get a broader overview of the page structure, making design and alignment tasks more efficient.
+
+### Events Report
+
+The Events Report button <img alt="Dialog Icon" src={require('./img/events-report-switch.png').default} style={{borderRadius: '6px', width: '3%'}} /> displays all the event interactions defined within a page. It provides a visual overview of how components define their events, helping developers understand and debug the application’s behavior.
+
+Each node in the report represents a component or a Qodly Source event definition. Developers can explore complex event logic at a glance, without navigating through multiple panels.
+
+<img alt="Dialog Icon" src={require('./img/events-report.png').default} style={{borderRadius: '6px', width: '100%'}} />
+
+Users can also edit events directly within the report. Clicking the Edit <img alt="Dialog Icon" src={require('./img/edit-events-report.png').default} style={{borderRadius: '6px', width: '15%'}} /> an event block opens its configuration, allowing developers to modify the event’s logic, connected Qodly sources, or target components without leaving the Events Report view. This streamlines the process of fine-tuning event behavior while maintaining full visibility of related connections.
+
+The Events Report includes a Filter panel that allows users to refine the view and focus on specific types of connections:
+
+<img alt="Dialog Icon" src={require('./img/filter-events-report.png').default} style={{borderRadius: '6px', width: '15%'}} />
+
+Components: Displays events triggered directly by components (e.g., Button, Stylebox...).
+
+Local QodlySources: Shows events linked to Qodly sources defined locally within the current page.
+
+Shared QodlySources: Displays events associated with shared Qodly sources across pages.
+
+Users can switch back to the Page Editor at any time using the toolbar button in the top-right corner.
+
+<img alt="Dialog Icon" src={require('./img/switch-event-report.png').default} style={{borderRadius: '6px', width: '15%'}} />
+
+The Events Report is especially useful for reviewing the logic of complex pages, ensuring that event flows behave as intended, and quickly diagnosing unexpected actions or missing links.
+
 
 ### Preview
 
