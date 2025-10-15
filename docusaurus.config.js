@@ -136,7 +136,7 @@ Thank you for helping us improve! 🚀
       // },
       metadata: [
         {name: 'keywords', content: 'qodly documentation, qodly doc, documentation qodly, doc qodly, qodly Developer, qodly guide, qodly tutorial, qodly low-code development'},
-        {name: 'description', content: 'Official documentation for Qodly developers. Learn how to use Qodly Studio, Qodlyscript, and more with detailed guides and tutorials.'},
+        {name: 'description', content: 'Official documentation for Qodly. Learn how to use Qodly Studio, desing Qodly pages and more with detailed guides and tutorials.'},
       ],
       navbar: {
         title: 'Docs', //Docs
@@ -189,6 +189,7 @@ Thank you for helping us improve! 🚀
             versions: 
             {
               current: {label: 'next'},
+              '21': {label: '21 BETA'},
               'R10': {label: '20 R10'},
             },
             dropdownItemsAfter: [

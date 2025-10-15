@@ -19,6 +19,10 @@ const sidebars = {
 			type: 'doc',
 			id: '4DQodlyPro/gettingStarted'
 		},
+		{
+			type: 'doc',
+			id: '4DQodlyPro/release-notes'
+		},
 	],
 	// Qodly 4D Pro
 	Develop: [

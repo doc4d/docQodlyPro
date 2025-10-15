@@ -93,16 +93,16 @@ The Location qodlysource is specifically designed to facilitate handling URL-rel
   
   **Example:**
   ```javascript
-  // URL: example.com/products/item
-  Location.urlQuery // Output: ["products", "item"]
+   // URL: example.com/search?category=shoes&color=blue
+  Location.urlQuery // Output: { category: "shoes", color: "blue" }
   ```
 
 - **urlPath** *(Object)*: Contains key-value pairs representing parameters that appear after the question mark (`?`) in URLs.
 
   **Example:**
   ```javascript
-  // URL: example.com/search?category=shoes&color=blue
-  Location.urlPath // Output: { category: "shoes", color: "blue" }
+   // URL: example.com/products/item
+  Location.urlPath // Output: ["products", "item"]
   ```
 
 - **anchor** *(String)*: Stores the part of the URL following the hash symbol (`#`). This is typically used for navigation within the same page or handling client-side routing.
