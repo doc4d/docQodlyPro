@@ -89,7 +89,7 @@ The Location qodlysource is specifically designed to facilitate handling URL-rel
 
 #### Key Attributes of Location:
 
-- **urlQuery** *(Array)*: Stores URL segments that identify specific resources. These segments represent parts of the URL separated by slashes (`/`).
+- **urlQuery** *(Object)*: Contains key-value pairs representing parameters that appear after the question mark (`?`) in URLs.
   
   **Example:**
   ```javascript
@@ -97,7 +97,7 @@ The Location qodlysource is specifically designed to facilitate handling URL-rel
   Location.urlQuery // Output: { category: "shoes", color: "blue" }
   ```
 
-- **urlPath** *(Object)*: Contains key-value pairs representing parameters that appear after the question mark (`?`) in URLs.
+- **urlPath** *(Array)*: Stores URL segments that identify specific resources. These segments represent parts of the URL separated by slashes (`/`).
 
   **Example:**
   ```javascript
