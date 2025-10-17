@@ -82,7 +82,9 @@ The `Qodly` namespace  <img src={require('./img/Built-inSharedQodlyNamespace.png
 
 ### Qodlysource: Location
 
-Within the **Qodly** namespace, you'll find the predefined qodlysource named **Location** <img src={require('./img/QodlysourceLocation.png').default} style={{borderRadius: '6px', width: '30%'}} />. 
+Within the **Qodly** namespace, you'll find the predefined qodlysource named **Location**
+
+<img src={require('./img/QodlysourceLocation.png').default} style={{borderRadius: '6px', width: '30%'}} />. 
 
 The Location qodlysource is specifically designed to facilitate handling URL-related data, making it simple to interact with different URL segments.
 
