@@ -82,14 +82,16 @@ The `Qodly` namespace  <img src={require('./img/Built-inSharedQodlyNamespace.png
 
 ### Qodlysource: Location
 
-Within the **Qodly** namespace, you'll find the predefined qodlysource named **Location** <img src={require('./img/QodlysourceLocation.png').default} style={{borderRadius: '6px', width: '30%'}} />. 
+Within the **Qodly** namespace, you'll find the predefined qodlysource named **Location**
+
+<img src={require('./img/QodlysourceLocation.png').default} style={{borderRadius: '6px', width: '30%'}} />. 
 
 The Location qodlysource is specifically designed to facilitate handling URL-related data, making it simple to interact with different URL segments.
 
 
 #### Key Attributes of Location:
 
-- **urlQuery** *(Array)*: Stores URL segments that identify specific resources. These segments represent parts of the URL separated by slashes (`/`).
+- **urlQuery** *(Object)*: Contains key-value pairs representing parameters that appear after the question mark (`?`) in URLs.
   
   **Example:**
   ```javascript
@@ -97,7 +99,7 @@ The Location qodlysource is specifically designed to facilitate handling URL-rel
   Location.urlQuery // Output: { category: "shoes", color: "blue" }
   ```
 
-- **urlPath** *(Object)*: Contains key-value pairs representing parameters that appear after the question mark (`?`) in URLs.
+- **urlPath** *(Array)*: Stores URL segments that identify specific resources. These segments represent parts of the URL separated by slashes (`/`).
 
   **Example:**
   ```javascript
