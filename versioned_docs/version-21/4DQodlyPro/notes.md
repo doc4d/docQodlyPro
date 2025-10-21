@@ -17,6 +17,17 @@ title: Release Notes
 
 ... more to come...
 
+### Breaking changes
+
+Starting with version 21, custom components must be migrated to the new structure supported by the Qodly CLI.
+
+To migrate existing components, run the following command from the root of your project:
+
+```bash
+npx @qodly/cli@latest migrate
+```
+
+Once migration is complete, rebuild your project to ensure all components load correctly in Studio.
 
 
 ## 4D 20 R10
