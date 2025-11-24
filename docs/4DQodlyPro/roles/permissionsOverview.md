@@ -1,6 +1,6 @@
 ---
 id: permissionsOverview
-title: Permissions
+title: Overview
 ---
 
 import Column from '@site/src/components/Column'
