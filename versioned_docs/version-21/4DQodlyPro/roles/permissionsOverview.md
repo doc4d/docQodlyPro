@@ -26,7 +26,7 @@ Permissions define essential actions on resources, covering tasks such as creati
 
 ## Default restriction modes
 
-The **Restrict Access by default** selector <img src={require('./img/restric-mode.png').default} style={{borderRadius: '6px', width:'30%'}} /> allows you to configure how resources (i.e. datastore, attributes, functions, etc.) are accessed when no specific permission is defined for them:
+The **Restrict Access by default** selector <img src={require('./img/restric-mode.png').default} style={{borderRadius: '6px', width:'3%'}} /> allows you to configure how resources (i.e. datastore, attributes, functions, etc.) are accessed when no specific permission is defined for them:
 
 - **Unrestricted mode** (selector off): Resources without defined permissions are accessible to all requests. This mode is suitable for development environments where access can be gradually restricted.
 - **Restricted mode** (selector on): Resources without defined permissions are blocked by default. This mode is recommended for production environments where access must be explicitly granted.
