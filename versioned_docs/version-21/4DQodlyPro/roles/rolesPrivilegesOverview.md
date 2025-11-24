@@ -93,7 +93,7 @@ To add a privilege:
 3. Click on the `Privileges` tab to access privileges management.
 4. Click on the `+` button to create a new privilege.
 
-<img src={require('./img/addPrivilege.png').default} style={{borderRadius: '6px', width:'350%'}}} />
+<img src={require('./img/addPrivilege.png').default} style={{borderRadius: '6px', width:'50%'}} />
 
 <br/><br/>
 
