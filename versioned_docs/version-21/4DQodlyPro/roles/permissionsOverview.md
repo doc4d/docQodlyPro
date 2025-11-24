@@ -1,18 +1,16 @@
 ---
 id: permissionsOverview
-title: Overview
+title: Permissions
 ---
 
 import Column from '@site/src/components/Column'
 
-In managing access control within your application, understanding the hierarchy and how permissions can override one another is crucial. Permissions can be set at various levels—**Datastore**, **DataClass**, and **Attribute**—each with the ability to override or supplement permissions set at higher levels. This hierarchical structure allows for granular control over user access to resources.
+A permission is the ability to do an action on a resource. For example, *execute the `ds.myTable.myFunction()`* represents a permission. Each permission can be given to one or more privileges.
+
+When no specific permission has been defined for a resource, access to the resource may be automatically unrestricted or restricted depending on the [default mode](#default-restriction-modes) defined for the project.
 
 
-## Permissions
-
-The permissions grid provides a comprehensive interface for managing access control.
-
-### Permission Types
+## Permission Types
 
 Permissions define essential actions on resources, covering tasks such as creation, reading, updating, deletion, description, execution (for functions), and promotion (also for functions).
 
@@ -24,6 +22,20 @@ Permissions define essential actions on resources, covering tasks such as creati
 | Delete | Delete data throughout the Model. | Delete data in the chosen Dataclass. | Delete a non-null value for the chosen Attribute. | n/a |
 | Execute | Execute all functions throughout the Model, including DataStore, Dataclasses, Entity selections, Entities, as well as Singleton functions| Execute any function on the chosen dataclass (Dataclass functions, entity functions, and entity selection functions). | n/a | Execute the selected function. |
 | Promote    | n/a | n/a | n/a | Temporarily adds a specific privilege to the session during function execution, primarily for secure privilege escalation. |
+
+
+## Default restriction modes
+
+The **Restrict Access by default** selector <img src={require('./img/restric-mode.png').default} style={{borderRadius: '6px', width:'30%'}} /> allows you to configure how resources (i.e. datastore, attributes, functions, etc.) are accessed when no specific permission is defined for them:
+
+- **Unrestricted mode** (selector off): Resources without defined permissions are accessible to all requests. This mode is suitable for development environments where access can be gradually restricted.
+- **Restricted mode** (selector on): Resources without defined permissions are blocked by default. This mode is recommended for production environments where access must be explicitly granted.
+
+For more information on the restriction modes, please refer to the [4D documentation](https://developer.4d.com/docs/ORDA/privileges#restriction-modes/).
+
+## Managing permissions
+
+The permissions grid provides a comprehensive interface for managing access control.
 
 ### Search Functionality
 
@@ -103,6 +115,9 @@ When all resources are available, the Clean button is disabled.  <img src={requi
 :::
 
 ## Inheritance
+
+In managing access control within your application, understanding the hierarchy and how permissions can override one another is crucial. Permissions can be set at various levels—**Datastore**, **DataClass**, and **Attribute**—each with the ability to override or supplement permissions set at higher levels. This hierarchical structure allows for granular control over user access to resources.
+
 
 ### General Principle
 
