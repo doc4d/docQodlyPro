@@ -93,7 +93,7 @@ To add a privilege:
 3. Click on the `Privileges` tab to access privileges management.
 4. Click on the `+` button to create a new privilege.
 
-<img src={require('./img/addPrivilege.png').default} style={{borderRadius: '6px'}} />
+<img src={require('./img/addPrivilege.png').default} style={{borderRadius: '6px', width:'50%'}} />
 
 <br/><br/>
 
@@ -168,23 +168,6 @@ To assign a role to a user in the `development` environment:
 
 <img src={require('./img/addingRolesviaCloud.png').default} style={{borderRadius: '6px'}} />
 
-
-## Retrieving Current Session Information
-
-You can retrieve user information in the current session using the `cs.Qodly.Users` class. This allows you to access essential user details, such as their email, role, first name, and last name.
-
-Here's how you can retrieve and store user data for session-wide access:
-
-```qs
-exposed Function loadSessionUserInfo()
-
-	use(session.storage)
-		session.storage.currentUser = cs.Qodly.Users.me.currentUser()
-	end
-
-```
-
-For more detailed information, refer to the [Sessions](../../QodlyinCloud/qodlyScript/SessionClass.md) and [Users](../../QodlyinCloud/qodlyScript/UsersClass.md) sections.
 
 
 

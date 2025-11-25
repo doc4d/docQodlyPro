@@ -20,3 +20,22 @@ The user only has [Guest privilege](../../../4DQodlyPro/roles/datastorePermissio
 
 See [this tutorial](./login.md) for an example of custom user authentication for public access. 
 
+## Retrieving Current Session Information
+
+You can retrieve user information in the current session using the `cs.Qodly.Users` class. This allows you to access essential user details, such as their email, role, first name, and last name.
+
+Here's how you can retrieve and store user data for session-wide access:
+
+```qs
+exposed Function loadSessionUserInfo()
+
+    use(session.storage)
+        session.storage.currentUser = cs.Qodly.Users.me.currentUser()
+    end
+
+```
+
+For more detailed information, refer to the [Sessions](../SessionClass.md) and [Users](../UsersClass.md) classes.
+
+
+
