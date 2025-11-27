@@ -22,6 +22,7 @@ To bind class functions, navigation actions or standard actions with events, fol
     - [Navigation Action](./bindingActionToEvents.md#binding-navigation-actions-to-events): Set up actions related to navigation within the application, such as opening another page or redirecting to an external URL.
     - [Class Function](./bindingActionToEvents.md#binding-class-functions-to-events): Use a custom function to handle the event.
     - [Dialog Action](./bindingActionToEvents.md#binding-dialog-actions-to-events): Configure to trigger dialog-related events. 
+    - [Qodly Pro Action](./bindingActionToEvents.md#binding-dialog-actions-to-events): Configure to trigger Qodly Pro specific events. 
 
 4. **Action Bound to Event**: In the list of available events, you will notice a purple bullet <img src={require('./img/events_purpleBullet.png').default} style={{borderRadius: '6px', width: '22%'}} /> displayed on the left side of events that have already been configured (if any).
 
