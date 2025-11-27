@@ -66,6 +66,21 @@ When a shortcut is defined, the **Save** button becomes active.
 If you want to discard changes or remove all shortcuts, click **Cancel**.  
 This will close the dialog without saving modifications.
 
+### App events
+
+#### onSessionExpired
+
+Triggered when the session is no longer valid. This happens in the following situations:
+• The server restarts
+• The user has been inactive for a certain period of time
+• A request fails due to an expired or invalid session
+
+#### onSessionExpireReminder
+
+Triggered after a configurable period of inactivity to warn the user before the session expires. The delay can be adjusted using a simple minute selector with plus and minus controls.
+
+![OnSessionExpiredConfig](./img/onSessionExpired.png)
+
 ### Qodly Source events
 
 Besides events triggered by end-user actions, events can also be automated to respond when qodlysources undergo changes. Qodly Sources support two distinct events: the `On Change` event and the `On Init` event.
