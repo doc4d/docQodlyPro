@@ -5,9 +5,7 @@ title: Welcome
 
 **Qodly Studio** is an interface builder for web applications. It provides developers with a graphical page editor to design applications running in web browsers or smartphones. It supports natively the [ORDA objects](https://developer.4d.com/docs/ORDA/overview).
 
-You can use Qodly Studio directly from your **4D environment** to build modern and sophisticated interfaces that you can easily integrate to your existing 4D projects and deploy **on premise**.
-
-Qodly Studio can also be used in the [**Qodly Cloud platform**](https://qodly.com), dedicated to the development of web business applications (see the [**Qodly Cloud**](../QodlyinCloud/quickstart.md) section of the documentation for more information).
+You use Qodly Studio directly from your [**4D environment**](https://developer.4d.com/docs) to build modern and sophisticated interfaces that you can easily integrate to and [deploy](../4DQodlyPro/deploy.md) with your existing 4D projects.
 
 Qodly Studio proposes a full-featured web UI, allowing you to:
 

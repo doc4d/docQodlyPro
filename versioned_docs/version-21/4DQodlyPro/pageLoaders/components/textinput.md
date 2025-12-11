@@ -2,13 +2,12 @@
 id: textinput
 title: Text Input
 ---
-import Column from '@site/src/components/Column'
 
+import Column from '@site/src/components/Column'
 
 The **Text Input** component is an interactive UI element that enables user interactions by allowing the input of alphanumeric data within a Page. With support for various input types, this component accommodates diverse data entry scenarios.
 
-
-:::info 
+:::info
 
 The **Text Input** component contains an embedded **Input** and a **Label** element. This is of great importance as configuring the **Text Input** component may require adjusting properties within the embedded elements. This applies to the visual style, triggers, and actions as they may differ.
 
@@ -24,9 +23,6 @@ The Text Input component provides a versatile solution for a wide range of scena
 
 - **Comments and Notes**: Employees can leave comments, feedback, or additional information on records, facilitating efficient communication and collaboration.
 
-
-
-
 ## Properties Customization
 
 ### Text Input Component
@@ -34,30 +30,31 @@ The Text Input component provides a versatile solution for a wide range of scena
 Enhance the **Text Input** component to align with your application's requirements using the following customization options:
 
 <Column.List align="center" justifyContent="between">
-	<Column.Item width="60%">
-        <ul>
-                <li><strong>Label Position</strong>: Developers can tailor the label's position, placing it above, below, to the left, to the right, or even hidden.</li>
-        </ul>
-	</Column.Item>
-	<Column.Item width="35%">
-                <img src={require('./img/textInput_LabelPosition.png').default} style={{borderRadius: '6px'}} />
-	</Column.Item>
-</Column.List>
+<Column.Item width="60%">
 
+<ul>
+<li><strong>Label Position</strong>: Developers can tailor the label's position, placing it above, below, to the left, to the right, or even hidden.</li>
+</ul>
+</Column.Item>
+<Column.Item width="35%">
+<img src={require('./img/textInput_LabelPosition.png').default} style={{borderRadius: '6px'}} />
+</Column.Item>
+</Column.List>
 
 ### Embedded Label
 
 Within the **Text Input** component, an embedded **Label** allows for further customization of the following properties:
 
 <Column.List align="center" justifyContent="between">
-	<Column.Item width="60%">
-        <ul>
-                <li><strong>Label</strong>: Personalize the label to offer clear instructions or guidance.</li>
-        </ul>
-	</Column.Item>
-	<Column.Item width="35%">
-                <img src={require('./img/textInput_label.png').default} style={{borderRadius: '6px'}} />
-	</Column.Item>
+<Column.Item width="60%">
+
+<ul>
+<li><strong>Label</strong>: Personalize the label to offer clear instructions or guidance.</li>
+</ul>
+</Column.Item>
+<Column.Item width="35%">
+<img src={require('./img/textInput_label.png').default} style={{borderRadius: '6px'}} />
+</Column.Item>
 </Column.List>
 
 ### Embedded Input
@@ -65,15 +62,16 @@ Within the **Text Input** component, an embedded **Label** allows for further cu
 Within the **Text Input** component, an embedded **Input** allows for further customization of the following properties:
 
 <Column.List align="center" justifyContent="between">
-	<Column.Item width="60%">
-        <ul>
-                <li><strong>Placeholder</strong>: Set a placeholder to provide users with a hint or example of the expected input. This text appears within the input field and disappears as soon as users begin typing.<br/></li>
-                <li><strong>Input Type</strong>: Select the appropriate input type to match the nature of the expected data. Available types include:</li>
-        </ul>
-	</Column.Item>
-	<Column.Item width="35%">
-                <img src={require('./img/textInput_InputCustomization.png').default} style={{borderRadius: '6px'}} />
-	</Column.Item>
+<Column.Item width="60%">
+
+<ul>
+<li><strong>Placeholder</strong>: Set a placeholder to provide users with a hint or example of the expected input. This text appears within the input field and disappears as soon as users begin typing.<br/></li>
+<li><strong>Input Type</strong>: Select the appropriate input type to match the nature of the expected data. Available types include:</li>
+</ul>
+</Column.Item>
+<Column.Item width="35%">
+<img src={require('./img/textInput_InputCustomization.png').default} style={{borderRadius: '6px'}} />
+</Column.Item>
 </Column.List>
 
 <ul>
@@ -133,7 +131,7 @@ Within the **Text Input** component, an embedded **Input** allows for further cu
                         </Column.List>
                         However, when the "Reveal Password" toggle is disabled, the password remains hidden, and the tooltip functionality is not available.
                 :::
-                :::tip 
+                :::tip
                 #### Direction Option for the Reveal Password Icon:
                         <Column.List align="center" justifyContent="between">
                                 <Column.Item width="70%">
@@ -152,11 +150,11 @@ Within the **Text Input** component, an embedded **Input** allows for further cu
                                 <img src={require('./img/inputType_date.png').default} style={{borderRadius: '6px'}} />
                         </Column.Item>
                 </Column.List>
-                :::tip 
+                :::tip
                 #### Week Start Customization in Date Picker:
                         Week Starts <img src={require('./img/inputType_dateWeekStarts.png').default} style={{borderRadius: '6px', width: '35%'}} /> defines which day should be considered the start of the week in the date picker. You can select a starting day such as Monday, Sunday, or any other day depending on your region or application needs.
                 :::
-                :::tip 
+                :::tip
                 #### Intervals for Date Input:
                         The Intervals feature allows users to control date selection by either linking a datasource or manually defining intervals:
                         <ul>
@@ -172,7 +170,7 @@ Within the **Text Input** component, an embedded **Input** allows for further cu
                                 #### Include Checkbox (within the card):
                                 <Column.List align="center" justifyContent="between">
                                         <Column.Item width="60%">
-                                                The options displayed in the interval form will change based on the selected type—except for one field that remains constant across all types: the <strong>Include</strong> checkbox. This checkbox lets you define whether that specific interval should <em>include</em> or <em>exclude</em> the selected date range.  
+                                                The options displayed in the interval form will change based on the selected type—except for one field that remains constant across all types: the <strong>Include</strong> checkbox. This checkbox lets you define whether that specific interval should <em>include</em> or <em>exclude</em> the selected date range.
                                         </Column.Item>
                                         <Column.Item width="35%">
                                                 <img src={require('./img/includeDateRange.png').default} style={{borderRadius: '6px'}} />
@@ -190,9 +188,9 @@ Within the **Text Input** component, an embedded **Input** allows for further cu
                                 </Column.List>
 
                                 <br/>
-                                <li>Alternatively, you can bind an external datasource (structured as a collection of objects with specific properties defining the filtering rules) to dynamically fetch intervals. <img src={require('./img/inputType_dateIntervals1.png').default} style={{borderRadius: '6px', width: '30%'}} /></li> 
+                                <li>Alternatively, you can bind an external datasource (structured as a collection of objects with specific properties defining the filtering rules) to dynamically fetch intervals. <img src={require('./img/inputType_dateIntervals1.png').default} style={{borderRadius: '6px', width: '30%'}} /></li>
                                 <br/>
-                                #### **Interval Datasource Schema**  
+                                #### **Interval Datasource Schema**
 
                                 | **Property** | **Type** | **Description** |
                                 |-------------|---------|----------------|
@@ -201,7 +199,7 @@ Within the **Text Input** component, an embedded **Input** allows for further cu
                                 | `params` | `Object` | Contains details about the interval, such as specific dates or recurring patterns. |
                                 | `active` | `Boolean` | Whether the interval is active. Defaults to true. If false, the interval is ignored. This behaves exactly like the Card Toggle in the UI, which enables or disables the interval block without removing your settings. |
                                 <br/>
-                                #### **`params` Object Properties**  
+                                #### **`params` Object Properties**
                                 | **Interval Type** | **Parameters** | **Example JSON Format** |
                                 |------------------|--------------|--------------------------|
                                 | **Starting From** | - `from` (`String`): Start date. <br/><br/> - `today` (`Boolean`): Uses today's date if `true`. | ``` [{ "include": true, "type": "startingFrom", "params": { "from": "2025-02-08" } }] ``` <br/><br/> ``` [{ "include": true, "type": "startingFrom", "params": { "today": true } }] ``` |
@@ -210,7 +208,7 @@ Within the **Text Input** component, an embedded **Input** allows for further cu
                                 | **Days** | - `days` (`Array`): Defines allowed weekdays. | ``` [{ "include": true, "type": "days", "params": { "days": [ { "label": "Monday", "value": "monday" } ] } }] ``` |
                         </ul>
                         <br/>
-                        Once an interval datasource is added, manual interval addition is disabled. To re-enable manual intervals, remove the datasource first. 
+                        Once an interval datasource is added, manual interval addition is disabled. To re-enable manual intervals, remove the datasource first.
                 :::
                 <Column.List align="center" justifyContent="between">
                         <Column.Item width="60%">
@@ -220,6 +218,28 @@ Within the **Text Input** component, an embedded **Input** allows for further cu
                                 <img src={require('./img/inputType_time.png').default} style={{borderRadius: '6px'}} />
                         </Column.Item>
                 </Column.List>
+                :::tip
+
+- Time Format
+
+You can choose how the time picker displays and collects time values.
+
+<img src={require('./img/textInput24HourFormat.png').default} style={{ borderRadius: '6px', width: 200 }} />
+
+24 Hour Format
+When this option is enabled, the time picker switches to the 24 hour clock. Hours range from 0 to 23 and there is no AM or PM selection.
+
+12 Hour Format
+When this option is disabled, the time picker uses the 12 hour clock. You select the hour, the minutes, and whether the time is AM or PM.
+
+<img src={require('./img/textInput_am_pm.png').default} style={{ borderRadius: '6px', width: 200 }} />
+
+This gives users the flexibility to work with the time format they are most familiar with, whether it is the standard 12 hour clock or the more technical 24 hour clock
+
+                :::
+
+
+
                 <Column.List align="center" justifyContent="between">
                         <Column.Item width="60%">
                                 <li><strong>duration</strong>: Limits input to duration values with a widget, enabling scrolling, manual entry, or using the + and - icons.</li>
@@ -229,12 +249,13 @@ Within the **Text Input** component, an embedded **Input** allows for further cu
                         </Column.Item>
                 </Column.List>
         </ul>
+
 </ul>
 
 <br/>
 
 - **Input Format**: Specify the desired format for the entered data. <br/>
-See <a href="componentsBasics#data-formatting">Formats</a> for a description of available formats.
+  See <a href="componentsBasics#data-formatting">Formats</a> for a description of available formats.
 
 <br/>
 
@@ -246,30 +267,31 @@ See <a href="componentsBasics#data-formatting">Formats</a> for a description of 
 
 The **Text Input** component allows for seamless integration of Qodly Sources, enabling dynamic data binding and interaction within the Page.
 
-:::info 
+:::info
 The qodlysource for the **Text Input** component should be of type `text`, `number`, `date`, or `duration`.
 :::
 
 ### Data Binding
+
 To associate data with the Text Input component, follow these steps:
 
 1. **Navigate to the Properties Panel**: Access the Data Access category located within the Properties panel for the Text Input component.
 
 <Column.List align="center" justifyContent="between">
-	<Column.Item width="55%">
-        <ol>
-                <li value="2"><strong>Define the Qodly Source</strong>: Specify the appropriate qodlysource that contains the data you want to display within the Text Input or retrieve from user input. This can be an attribute from an entity, an array, or a direct qodlysource of type text. For instance, you can select an entity, such as <code>package</code>.</li>
-        </ol>
-	</Column.Item>
-	<Column.Item width="40%">
-                <img src={require('./img/textInput_DataDisplay.png').default} style={{borderRadius: '6px'}} />
-	</Column.Item>
-</Column.List>
+<Column.Item width="55%">
 
+<ol>
+<li value="2"><strong>Define the Qodly Source</strong>: Specify the appropriate qodlysource that contains the data you want to display within the Text Input or retrieve from user input. This can be an attribute from an entity, an array, or a direct qodlysource of type text. For instance, you can select an entity, such as <code>package</code>.</li>
+</ol>
+</Column.Item>
+<Column.Item width="40%">
+<img src={require('./img/textInput_DataDisplay.png').default} style={{borderRadius: '6px'}} />
+</Column.Item>
+</Column.List>
 
 3. **Choose the Attribute**: Choose the specific attribute that you want to display within the component when using an entity or an array type qodlysource, such as <code>package.name</code>.
 
-:::tip 
+:::tip
 Alternatively, you can establish the connection by dragging and dropping the qodlysource onto the Text Input component.
 :::
 
@@ -277,23 +299,22 @@ Alternatively, you can establish the connection by dragging and dropping the qod
 
 Retrieving user input data is equally effortless. By binding a Qodly Source to the **Text Input** component, you can access and employ user-entered content.
 
-
 <Column.List align="center" justifyContent="between">
-	<Column.Item width="45%">
-                Imagine a search input where users type to find packages. Binding a qodlysource captures the input. 
-	</Column.Item>
-	<Column.Item width="50%">
-                <img src={require('./img/textInput_Server-SideInteraction.png').default} style={{borderRadius: '6px'}} />
-	</Column.Item>
+<Column.Item width="45%">
+Imagine a search input where users type to find packages. Binding a qodlysource captures the input.
+</Column.Item>
+<Column.Item width="50%">
+<img src={require('./img/textInput_Server-SideInteraction.png').default} style={{borderRadius: '6px'}} />
+</Column.Item>
 </Column.List>
 
 <Column.List align="center" justifyContent="between">
-	<Column.Item width="45%">
-                Consequently, you can utilize this input value in various ways, such as within a standard action to initiate a search with matching attribute values.
-	</Column.Item>
-	<Column.Item width="50%">
-                <img src={require('./img/textInput_standardAction.png').default} style={{borderRadius: '6px'}} />
-	</Column.Item>
+<Column.Item width="45%">
+Consequently, you can utilize this input value in various ways, such as within a standard action to initiate a search with matching attribute values.
+</Column.Item>
+<Column.Item width="50%">
+<img src={require('./img/textInput_standardAction.png').default} style={{borderRadius: '6px'}} />
+</Column.Item>
 </Column.List>
 
 ## Customizing Text Input Styles
@@ -304,18 +325,18 @@ The **Text Input** component consists of embedded elements that can be styled in
 
 The following HTML tags make up the structure of the **Text Input** component. Each tag can be individually styled to adjust its appearance and interaction.
 
-| **Tag Name** | **Applies To**              | **Description**                                                                                                            |
-|--------------|-----------------------------|----------------------------------------------------------------------------------------------------------------------------|
+| **Tag Name** | **Applies To**               | **Description**                                                                                                                                                                           |
+| ------------ | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `<label>`    | Container for the text label | This wraps the label text for the input field. Customizing the label with CSS can change its font size, color, and spacing, affecting its visibility and alignment relative to the input. |
-| `<span>`     | Label text inside `<label>` | Displays the actual label text. CSS changes to the span can modify text color, style, or opacity, influencing the label’s emphasis and readability.                                   |
-| `<input>`    | Field for user text entry   | The primary element where users enter data. Styling the input affects border, background, padding, and focus state, impacting its overall look, spacing, and user interaction feedback. |
+| `<span>`     | Label text inside `<label>`  | Displays the actual label text. CSS changes to the span can modify text color, style, or opacity, influencing the label’s emphasis and readability.                                       |
+| `<input>`    | Field for user text entry    | The primary element where users enter data. Styling the input affects border, background, padding, and focus state, impacting its overall look, spacing, and user interaction feedback.   |
 
 ### Component-Specific Attributes
 
 HTML attributes within the **Text Input** component provide additional customization options, particularly for guiding user interactions.
 
-| **Attribute Name** | **Applies To** | **Description**                                                                                                 |
-|--------------------|----------------|-----------------------------------------------------------------------------------------------------------------|
+| **Attribute Name** | **Applies To** | **Description**                                                                                                                                                                        |
+| ------------------ | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `placeholder`      | Input field    | Provides hint text within the input field when it is empty. Styling the placeholder can change its color, font style, and opacity, offering subtle guidance to users on what to enter. |
 
 ### Example 1 - Overall Component Style
@@ -323,9 +344,10 @@ HTML attributes within the **Text Input** component provide additional customiza
 The `self` selector targets the entire Text Input component, allowing you to customize its size, font, and shadow effects.
 
 <Column.List align="center" justifyContent="between">
-  <Column.Item width="58%">
-    <pre>
-      <code className="language-css">
+<Column.Item width="58%">
+
+<pre>
+<code className="language-css">
 {`/* Input tag styling*/
 self input{
     width: 20.4rem;
@@ -342,13 +364,14 @@ self input{
 self > :first-child{
     display: flex;
 }`}
-      </code>
-    </pre>
-  </Column.Item>
- <Column.Item width="40%">
-    <img
-      src={require('./img/textInput_style1.png').default} style={{ borderRadius: '6px' }}/>
-  </Column.Item>
+</code>
+</pre>
+
+</Column.Item>
+<Column.Item width="40%">
+<img
+src={require('./img/textInput_style1.png').default} style={{ borderRadius: '6px' }}/>
+</Column.Item>
 </Column.List>
 
 ### Example 2 - Placeholder Style
@@ -356,20 +379,22 @@ self > :first-child{
 The `self input::placeholder` selector targets the placeholder text, giving it a distinct color for clarity.
 
 <Column.List align="center" justifyContent="between">
-  <Column.Item width="58%">
-    <pre>
-      <code className="language-css">
+<Column.Item width="58%">
+
+<pre>
+<code className="language-css">
 {`/* Placeholder text color */
 self input::placeholder{ 
     color: #a3a9b5; 
 }`}
-      </code>
-    </pre>
-  </Column.Item>
- <Column.Item width="40%">
-    <img
-      src={require('./img/textInput_style2.png').default} style={{ borderRadius: '6px' }}/>
-  </Column.Item>
+</code>
+</pre>
+
+</Column.Item>
+<Column.Item width="40%">
+<img
+src={require('./img/textInput_style2.png').default} style={{ borderRadius: '6px' }}/>
+</Column.Item>
 </Column.List>
 
 ### Example 3 - Focus Style
@@ -377,22 +402,24 @@ self input::placeholder{
 The `self:focus-within` selector applies when the input is focused, such as when a user clicks or types in the field, adding a visual effect to indicate that the field is active.
 
 <Column.List align="center" justifyContent="between">
-  <Column.Item width="58%">
-    <pre>
-      <code className="language-css">
+<Column.Item width="58%">
+
+<pre>
+<code className="language-css">
 {`/* Focus state styling for the input tag */
 self input:focus-within { 
     outline: none; 
     box-shadow: .3rem .3rem .6rem #c8d0e7, -.2rem -.2rem .5rem #FFFFFF;
     color: #6d5dfc;
 }`}
-      </code>
-    </pre>
-  </Column.Item>
- <Column.Item width="40%">
-    <img
-      src={require('./img/textInput_style3.png').default} style={{ borderRadius: '6px' }}/>
-  </Column.Item>
+</code>
+</pre>
+
+</Column.Item>
+<Column.Item width="40%">
+<img
+src={require('./img/textInput_style3.png').default} style={{ borderRadius: '6px' }}/>
+</Column.Item>
 </Column.List>
 
 ### Example 4 - Label as a Search Icon Inside the Text Input Field
@@ -404,9 +431,10 @@ Make sure that the label text is empty so that you won’t have an icon next to 
 :::
 
 <Column.List align="center" justifyContent="between">
-  <Column.Item width="58%">
-    <pre>
-      <code className="language-css longCode-block">
+<Column.Item width="58%">
+
+<pre>
+<code className="language-css longCode-block">
 {`/* Main component styling*/
 self {
     width: 20.4rem;
@@ -451,15 +479,15 @@ self label::before{
 self:focus-within label::before{ 
     color: #6d5dfc;
 }`}
-      </code>
-    </pre>
-  </Column.Item>
- <Column.Item width="40%">
-    <img
-      src={require('./img/textInput_style4.png').default} style={{ borderRadius: '6px' }}/>
-  </Column.Item>
-</Column.List>
+</code>
+</pre>
 
+</Column.Item>
+<Column.Item width="40%">
+<img
+src={require('./img/textInput_style4.png').default} style={{ borderRadius: '6px' }}/>
+</Column.Item>
+</Column.List>
 
 ## Triggers and Events
 
@@ -467,36 +495,36 @@ self:focus-within label::before{
 
 The **Text Input** component can respond to various events, enabling dynamic user experiences. Events that can trigger actions within the component include:
 
-|Event|Description|
-|---|---|
-|On Click| Calls for an action when the user clicks on the component. |
-|On MouseEnter| Calls for an action when the user's mouse cursor enters the area of the component.|
-|On MouseLeave| Calls for an action when the user's mouse cursor exits the area of the component.|
+| Event         | Description                                                                        |
+| ------------- | ---------------------------------------------------------------------------------- |
+| On Click      | Calls for an action when the user clicks on the component.                         |
+| On MouseEnter | Calls for an action when the user's mouse cursor enters the area of the component. |
+| On MouseLeave | Calls for an action when the user's mouse cursor exits the area of the component.  |
 
 ### Embedded Input
 
 The embedded **Input** can also respond to various events, allowing for dynamic user experiences. Events that can trigger actions within the embedded icon include:
 
-|Event|Description|
-|---|---|
-|On Change| Calls for an action when the value of the Input changes. This typically occurs when the user enters or modifies text in the Input field. |
-|On Click| Calls for an action when the user clicks on the Input. |
-|On Keyup| Calls for an action when a keyboard key is released while the Input is in focus|
-|On KeyDown| Calls for an action when a keyboard key is pressed down while the Input is in focus. |
-|On AuxClick| Calls for an action when the user performs an auxiliary action (e.g., right-click or middle-click) on the Input.|
-|On Blur| Calls for an action when the Input loses focus (user clicks outside). |
-|On Focus| Calls for an action when the Input gains focus (user clicks on it). |
-|On MouseEnter| Calls for an action when the user's mouse cursor enters the area of the Input.|
-|On MouseLeave| Calls for an action when the user's mouse cursor exits the area of the Input.|
+| Event         | Description                                                                                                                              |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| On Change     | Calls for an action when the value of the Input changes. This typically occurs when the user enters or modifies text in the Input field. |
+| On Click      | Calls for an action when the user clicks on the Input.                                                                                   |
+| On Keyup      | Calls for an action when a keyboard key is released while the Input is in focus                                                          |
+| On KeyDown    | Calls for an action when a keyboard key is pressed down while the Input is in focus.                                                     |
+| On AuxClick   | Calls for an action when the user performs an auxiliary action (e.g., right-click or middle-click) on the Input.                         |
+| On Blur       | Calls for an action when the Input loses focus (user clicks outside).                                                                    |
+| On Focus      | Calls for an action when the Input gains focus (user clicks on it).                                                                      |
+| On MouseEnter | Calls for an action when the user's mouse cursor enters the area of the Input.                                                           |
+| On MouseLeave | Calls for an action when the user's mouse cursor exits the area of the Input.                                                            |
 
 ### Embedded Label
 
 The embedded **Label** can also respond to various events, allowing for dynamic user experiences. Events that can trigger actions within the embedded icon include:
 
-|Event|Description|
-|---|---|
-|On Click| Calls for an action when the user clicks on the Label. |
-|On Keyup| Calls for an action when a keyboard key is released while the Label is in focus|
-|On KeyDown| Calls for an action when a keyboard key is pressed down while the Label is in focus. |
-|On MouseEnter| Calls for an action when the user's mouse cursor enters the area of the Label.|
-|On MouseLeave| Calls for an action when the user's mouse cursor exits the area of the Label.|
+| Event         | Description                                                                          |
+| ------------- | ------------------------------------------------------------------------------------ |
+| On Click      | Calls for an action when the user clicks on the Label.                               |
+| On Keyup      | Calls for an action when a keyboard key is released while the Label is in focus      |
+| On KeyDown    | Calls for an action when a keyboard key is pressed down while the Label is in focus. |
+| On MouseEnter | Calls for an action when the user's mouse cursor enters the area of the Label.       |
+| On MouseLeave | Calls for an action when the user's mouse cursor exits the area of the Label.        |

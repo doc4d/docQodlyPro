@@ -12,7 +12,7 @@ const isProduction = process.env.GITHUB_REPOSITORY_OWNER === '4d';
 const config = {
   title: '4D Qodly Pro Documentation',
   tagline: 'Easily build powerful, low-code web interfaces to elevate your 4D applications.',
-  url: isProduction ? "https://developer.qodly.com" : "https://docqodly.github.io",
+  url: isProduction ? "https://developer.4d.com" : "https://doc4d.github.io",
   baseUrl: isProduction ? "/qodly/" : "/docQodlyPro/",
   // baseUrl: "/qodly/",
   onBrokenLinks: 'warn',
@@ -174,12 +174,14 @@ Thank you for helping us improve! 🚀
             label: 'Custom Components',
           },
           // Qodly Cloud
+          /*
           {
             type: 'doc',
             docId: 'QodlyinCloud/quickstart',
             position: 'left',
             label: 'Qodly Cloud',
           },
+          */
           //
           {
             type: 'docsVersionDropdown',
@@ -192,6 +194,7 @@ Thank you for helping us improve! 🚀
               '21': {label: '21 BETA'},
               'R10': {label: '20 R10'},
             },
+            /*
             dropdownItemsAfter: [
               {
                 type: 'html',
@@ -211,6 +214,7 @@ Thank you for helping us improve! 🚀
                 href: 'https://developer.qodly.com/docs-archive/1.0.0/get-started/quickstart',
               },
             ],
+            */
           }, 
         ],
       },

@@ -47,6 +47,7 @@ const FeatureList = [
 		link: "Integrations/customComponents/overview"
   },
   */
+  /*
   {
     title: 'Cloud',
     Svg: require('@site/static/img/qodly-cloud.svg').default,
@@ -57,6 +58,7 @@ const FeatureList = [
     ),
 		link: "QodlyinCloud/quickstart"
   }
+  */
 ];
 
 function Feature({Svg, title, description, link}) {
