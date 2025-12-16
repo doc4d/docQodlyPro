@@ -61,6 +61,7 @@ All the [configuration requirements](#requirements) can be automatically set for
 - Only settings that need to be edited are listed in the dialog box. 
 - Since scalable sessions run in preemptive mode, enabling this setting might require that you evaluate the [thread-safety property](https://developer.4d.com/docs/Develop/preemptive-processes#writing-a-thread-safe-method) of your code. 
 - Activating the "forceLogin" mode might require that you reconfigure the REST accesses, [as explained in this blog post](https://blog.4d.com/force-login-becomes-default-for-all-rest-auth/). 
+- If 4D's [user settings](https://developer.4d.com/docs/settings/overview#enabling-user-settings) are enabled, pay attention to the fact that active settings will be configured.
 
 :::
 
