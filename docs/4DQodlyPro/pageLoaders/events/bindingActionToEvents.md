@@ -22,6 +22,8 @@ After binding a standard action to a qodlysource with an event, follow these ste
     |                  | Set Value             | ![SetValue](./img/standardAction_setValue.png)                                                                        | Update the qodlysource with a new value, which can be a String, Number, Boolean, Date, Array, or Object (with JSON validity). Note that this will trigger any configured OnChange event for the qodlysource.                                                                     |
     |                  | Clear                 | ![Clear](./img/standardAction_clear.png)                                                                      | Erase the content within the qodlysource                                                                                       |
     |                  | Reset                 | ![Reset](./img/standardAction_reset.png)                                                                      | Resets the qodlysource to its initial value                                                                                       |
+    |  Scalar (Number)                | Increment                 | ![Increment](./img/standardAction_increment.png)                                                                      | Increments the qodlysource's value                                                                                       |
+    |                  | Decrement                 | ![Decrement](./img/standardAction_decrement.png)                                                                      | Decrements the qodlysource's value                                                                                       |
     | Entity Selection | Order By              | ![Order By](./img/standardAction_orderBy.png)                                                                | Specify one or more attributes to sort and select direction                                                                    |
     |                  | Query                 | ![Query](./img/standardAction_query.png)                                                                    | The query is provided as a string and supports the same syntax as an [ORDA query](../../../QodlyinCloud/qodlyScript/guides/queries.md), except for formula (`eval`) and the `settings` object. Placeholders can be used with qodlysources or data as-is  |
     |                  | Reload                | ![Reload](./img/standardAction_reload.png)                                                                  | Reload the entire entity selection from the server                                                                             |
@@ -522,6 +524,45 @@ Consider a function called `product.productManual`, which is exposed with the `o
 :::info
 For further details, refer to the [Dialog](../components/dialog.md) section.
 :::
+
+## Binding Qodly Pro Actions
+
+<Column.List align="center" justifyContent="between">
+    <Column.Item width="55%">
+        Components within a Page can be configured to trigger Qodly Pro events. By choosing the <code>Add a Qodly pro action</code> in a component's event configuration, you can define the following:
+    </Column.Item>
+    <Column.Item width="40%">
+        <img src={require('./img/qodlyProAction.png').default} style={{borderRadius: '6px'}} />
+    </Column.Item>
+</Column.List>
+
+<Column.List align="center" justifyContent="between">
+    <Column.Item width="55%">
+        The type of action:
+        <br/><br/>
+        <ul>
+            <li><strong>Authentication</strong>: This action logs the user out of the rendered app<br/></li>
+            <li><strong>4D Code</strong>: This action allows you to call 4D function shared through the [WA SET CONTEXT](https://developer.4d.com/docs/fr/commands/wa-set-context) when running the qodly page inside a Web Area in a 4D Form</li>
+        </ul>
+    </Column.Item>
+    <Column.Item width="40%">
+        <img src={require('./img/qodlyProAction2.png').default} style={{borderRadius: '6px'}} />
+    </Column.Item>
+</Column.List>
+
+### Authentication
+
+<img src={require('./img/qodlyProActionLogout.png').default} style={{borderRadius: '6px'}} />
+
+The Authentication type has the logout function to log the user out of the app.
+
+### 4D Code
+
+<img src={require('./img/qodlyProAction4dContext.png').default} style={{borderRadius: '6px'}} />
+
+The user can type in the name of the function they want to execute and also add params and bind the result the same way they would do calling a [Class Functions](#class-functions)
+
+
 
 ## Providing feedback
 
