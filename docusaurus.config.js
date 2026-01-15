@@ -81,7 +81,7 @@ const config = {
           path: 'docs',
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
-          
+          includeCurrentVersion: isProduction ? false : true, // false for prod only
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl: isProduction ? `${ghUrl}/edit/main`: undefined,

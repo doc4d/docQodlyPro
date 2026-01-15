@@ -1,5 +1,6 @@
 # qodly documentation
 
+DEPRECATED 
 Welcome to the 4D Qodly Pro documentation site.
 
 ## Start
