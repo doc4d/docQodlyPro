@@ -104,6 +104,11 @@ Thank you for helping us improve! 🚀
           },
           
           includeCurrentVersion: isProduction ? false : true, // false for prod only
+          versions: 
+            {
+              '21-R2': {label: '21 R2 BETA', banner: 'none',},
+              '21': {label: '21', banner: 'none',},
+            },
         },
         blog: {
           //  showReadingTime: true,
@@ -143,8 +148,10 @@ Thank you for helping us improve! 🚀
         title: 'Docs', //Docs
         logo: {
           alt: 'Qodly',
-          src: 'img/qodly-light-version.svg',
-          srcDark: 'img/qodly-dark-version.svg',
+          src: 'img/4DQodlyPro-black-on-transp.png',
+          srcDark: 'img/4DQodlyPro-light-on-transp.png',
+          //src: 'img/qodly-light-version.svg',
+          //srcDark: 'img/qodly-dark-version.svg',
         },
         items: [
           // 
@@ -183,18 +190,19 @@ Thank you for helping us improve! 🚀
             label: 'Qodly Cloud',
           },
           */
+        
           //
           {
             type: 'docsVersionDropdown',
             position: 'right',
-            //dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
+           //dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
             dropdownActiveClassDisabled: true,
-            versions: 
-            {
-              current: {label: 'next'},
-              '21': {label: '21 BETA'},
-              'R10': {label: '20 R10'},
-            },
+           // versions: 
+           // {
+           //   current: {label: 'test'},
+           //   '21-R2': {label: '21 R2 BETA'},
+          //  '21': {label: '21'},
+           // },
             /*
             dropdownItemsAfter: [
               {
@@ -217,6 +225,7 @@ Thank you for helping us improve! 🚀
             ],
             */
           }, 
+          
         ],
       },
       footer: {
