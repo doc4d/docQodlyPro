@@ -34,8 +34,6 @@ Once migration is complete, rebuild your project to ensure all components load c
 
 ### Highlights
 
-- [Qodly Looker Studio Connector](../Integrations/qodlyLookerStudio/qodlyLookerStudioConnector.md): Added integration between Qodly applications and Google Looker Studio, enabling users to create interactive dashboards, track real-time business metrics, and generate custom reports using Qodly data.
-
 - [Saved Condition Go To Button](pageLoaders/states/conditionalState.md#saved-condition-integration): When a saved condition is integrated into a state, a **Go to** button now appears next to its name. Clicking it opens the full saved condition in edit mode—so you can quickly review or update it without leaving the schema view.
 
 - [Interval Range Validation for Text Input](pageLoaders/components/textinput.md#intervals-for-date-input): For text inputs using the **interval type `Range`**, if the **start date is later than the end date**, an error message will be shown and the dates will be temporarily disabled until corrected. 
