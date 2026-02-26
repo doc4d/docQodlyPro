@@ -327,6 +327,76 @@ self:disabled {
 
 :::
 
+#### Read-Only Mode
+
+The "Read Only" toggle in the properties panel allows you to set a component to read-only. Unlike disabled components, read-only components remain focusable, tab-navigable, and accessible to screen readers, and their values are included when submitting form data.
+
+1. **Build Mode**:
+
+    - **Behavior**: The component functions normally, allowing you to configure events and test interactions during design.
+
+    - **Appearance**: The component appears unchanged in build mode.
+
+2. **Rendering Mode**:
+
+    - **Behavior**: Users cannot modify the component's value through direct interaction. All events remain functional except for user-initiated input events. For example, if two Text Input components are bound to the same Qodly Source and one is read-only, changes made through the editable input are reflected in the read-only input, but the read-only input does not emit an `onChange` event.
+
+    - **Appearance**: The cursor changes to `default` to visually indicate that the component is not editable.
+
+      The following table shows all components that support the read-only property and whether they have native HTML `readonly` support:
+
+      | Component    | Type      | Native `readonly` Support |
+      |--------------|-----------|:------------------------:|
+      | Text Input   | text      | ✅                       |
+      | Text Input   | number    | ✅                       |
+      | Text Input   | password  | ✅                       |
+      | Text Input   | text area | ✅                       |
+      | Text Input   | date      | ✅                       |
+      | Text Input   | duration  | ✅                       |
+      | File Upload  | N/A       | ✅                       |
+      | Select Input | N/A       | ❌                       |
+      | Radio        | N/A       | ❌                       |
+      | Check Box    | N/A       | ❌                       |
+      | Range Input  | N/A       | ❌                       |
+      | Select Box   | N/A       | ❌                       |
+      | Matrix       | N/A       | ❌                       |
+      | Datatable    | N/A       | ❌                       |
+
+:::info Read-Only vs Disabled
+While both properties restrict user interaction, they differ in important ways:
+- **Read-only** components are tab-navigable and their values are submitted with forms. Screen readers can access them normally.
+- **Disabled** components are not tab-navigable and their values are not submitted with forms.
+- When both `readonly` and `disabled` are set on a component, `disabled` takes precedence.
+:::
+
+:::info HTML Attributes
+- Components with native `readonly` support receive both `readonly="true"` and `data-readonly="true"` attributes.
+- Components without native `readonly` support receive only the `data-readonly="true"` attribute.
+
+This provides a unified way to target all read-only components in CSS using `data-readonly`.
+:::
+
+:::tip Customizing Read-Only Rendering
+You can customize the appearance of read-only components using CSS classes.
+
+For components with native `readonly` support:
+
+```css
+self[readonly] {
+  /* your styles */
+}
+```
+
+For all read-only components (including those without native support):
+
+```css
+self[data-readonly] {
+  /* your styles */
+}
+```
+
+:::
+
 
 
 ### Data Access Category
