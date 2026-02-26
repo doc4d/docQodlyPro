@@ -15,8 +15,6 @@ title: Release Notes
 
 - [Events Report](pageLoaders/pageLoaderOverview.md#events-report): Introduced the Events Report, a visual overview of all page events for components and Qodly sources complete with filtering, editing, and navigation options.
 
-... more to come...
-
 ### Breaking changes
 
 Starting with version 21, custom components must be migrated to the new structure supported by the Qodly CLI.
