@@ -186,7 +186,7 @@ For events bound to Class functions, the collapsed card displays the function si
 <Column.List align="center" justifyContent="between">
     <Column.Item width="50%">
         <ul>
-            <li>Exposed <a href="https://developer.4d.com/docs/API/guides/data-model#datastoreimplementation-class">datastore class functions</a> distinguishable by the keyword <code>Datastore</code>.</li>
+            <li>Exposed <a href="https://developer.4d.com/docs/ORDA/ordaClasses#datastore-class">datastore class functions</a> distinguishable by the keyword <code>Datastore</code>.</li>
         </ul>
     </Column.Item>
     <Column.Item width="49%">
@@ -220,7 +220,7 @@ For events bound to Class functions, the collapsed card displays the function si
 <Column.List align="center" justifyContent="between">
     <Column.Item width="50%">
         <ul>
-            <li>Exposed <a href="[../../../QodlyinCloud/qodlyScript/basics/lang-classes#singleton-classes](https://developer.4d.com/docs/Concepts/classes#singleton-classes)">singleton class functions</a>, distinguished by the <code>Page</code> keyword.</li>
+            <li>Exposed <a href="[https://developer.4d.com/docs/Concepts/classes#singleton-classes](https://developer.4d.com/docs/Concepts/classes#singleton-classes)">singleton class functions</a>, distinguished by the <code>Page</code> keyword.</li>
         </ul>
     </Column.Item>
     <Column.Item width="49%">

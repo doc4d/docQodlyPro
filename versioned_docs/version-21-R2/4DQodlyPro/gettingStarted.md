@@ -140,10 +140,10 @@ You will then be prompted to enter the [access key](https://developer.4d.com/doc
 
 The following commands and classes are dedicated to the server-side management of Qodly pages:
 
-- [`Web Form`](../QodlyinCloud/qodlyScript/commands/webForm.md) command: returns the Qodly page as an object.
-- [`Web Event`](../QodlyinCloud/qodlyScript/commands/webEvent.md) command: returns events triggered within Qodly page components.
-- [`WebForm`](../QodlyinCloud/qodlyScript/WebFormClass.md) class: functions and properties to manage the rendered Qodly page.
-- [`WebFormItem`](../QodlyinCloud/qodlyScript/WebFormItemClass.md) class: functions and properties to manage Qodly page components.
+- [`Web Form`](https://developer.4d.com/docs/API/commands/webForm) command: returns the Qodly page as an object.
+- [`Web Event`](https://developer.4d.com/docs/API/commands/webEvent) command: returns events triggered within Qodly page components.
+- [`WebForm`](https://developer.4d.com/docs/API/WebFormClass) class: functions and properties to manage the rendered Qodly page.
+- [`WebFormItem`](https://developer.4d.com/docs/API/WebFormItemClass) class: functions and properties to manage Qodly page components.
 
 
 ### Using project methods

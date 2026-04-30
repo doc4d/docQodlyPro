@@ -25,7 +25,7 @@ After binding a standard action to a qodlysource with an event, follow these ste
     |  Scalar (Number)                | Increment                 | ![Increment](./img/standardAction_increment.png)                                                                      | Increments the qodlysource's value                                                                                       |
     |                  | Decrement                 | ![Decrement](./img/standardAction_decrement.png)                                                                      | Decrements the qodlysource's value                                                                                       |
     | Entity Selection | Order By              | ![Order By](./img/standardAction_orderBy.png)                                                                | Specify one or more attributes to sort and select direction                                                                    |
-    |                  | Query                 | ![Query](./img/standardAction_query.png)                                                                    | The query is provided as a string and supports the same syntax as an [ORDA query](../../../QodlyinCloud/qodlyScript/guides/queries.md), except for formula (`eval`) and the `settings` object. Placeholders can be used with qodlysources or data as-is  |
+    |                  | Query                 | ![Query](./img/standardAction_query.png)                                                                    | The query is provided as a string and supports the same syntax as an [ORDA query](https://developer.4d.com/docs/API/guides/queries), except for formula (`eval`) and the `settings` object. Placeholders can be used with qodlysources or data as-is  |
     |                  | Reload                | ![Reload](./img/standardAction_reload.png)                                                                  | Reload the entire entity selection from the server                                                                             |
     |                  | All                   | ![All](./img/standardAction_all.png)                                                                        | Load all entities of the same dataclass                                                                                        |
     |                  | Clear                 | ![Clear](./img/standardAction_clear.png)                                                                    | Remove any content and create a new, empty selection of the same dataclass                                                    |
@@ -62,7 +62,7 @@ After binding a standard action to a qodlysource with an event, follow these ste
 <br />
 
 :::note About Create entity action
-Keep in mind that the **Create** action only creates a new, blank entity in memory. If you want to save this entity in the datastore, you need to execute the **Save** action. New entity attributes are filled with null values. If you want to create, initialize, and save a new entity, you might consider using a [QodlyScript function](../../../QodlyinCloud/qodlyScript/guides/data.md#creating-an-entity). 
+Keep in mind that the **Create** action only creates a new, blank entity in memory. If you want to save this entity in the datastore, you need to execute the **Save** action. New entity attributes are filled with null values. If you want to create, initialize, and save a new entity, you might consider using a [QodlyScript function](https://developer.4d.com/docs/API/guides/data#creating-an-entity). 
 :::
 
 <br />
@@ -129,7 +129,7 @@ The `Base` state and `Conditional` states, however, are not included among these
 :::
 
 :::tip
-The states are enabled in the given order of the standard action (same if [`WebForm.enableState`](../../../QodlyinCloud/qodlyScript/WebFormClass.md#enablestate) is called several times with different states).
+The states are enabled in the given order of the standard action (same if [`WebForm.enableState`](https://developer.4d.com/docs/API/WebFormClass#enablestate) is called several times with different states).
 :::
 
 :::warning
@@ -289,7 +289,7 @@ When the path points to a file, it doesn't open it in a new tab but instead init
 
 <Column.List align="center" justifyContent="between">
 	<Column.Item width="55%">
-		4. <strong>Add Parameter</strong>: If your function accepts a <a href="../../../QodlyinCloud/qodlyScript/basics/lang-parameters#optional-parameters">variable number of parameters</a>, you can use this button to declare and bind one or more appropriate parameter(s). They will be passed to the function in the defined order when called for the event.
+		4. <strong>Add Parameter</strong>: If your function accepts a <a href="https://developer.4d.com/docs/Concepts/parameters#optional-parameters">variable number of parameters</a>, you can use this button to declare and bind one or more appropriate parameter(s). They will be passed to the function in the defined order when called for the event.
 	</Column.Item>
 	<Column.Item width="40%">
 		<img src={require('./img/contextualPanel_addParam.png').default} style={{borderRadius: '6px'}} />
@@ -418,7 +418,7 @@ There are two primary methods for ensuring precise parameter handling:
 
 ### Binding onHttpGet Functions
 
-Functions defined with the [onHttpGet](../../../QodlyinCloud/qodlyScript/guides/data-model.md#onhttpget-keyword) keyword and returning an instance of the [4D.OutgoingMessage](../../../QodlyinCloud/qodlyScript/OutgoingMessageClass.md) class, have a unique behavior when bound to events. Unlike standard functions, `onHttpGet functions` are specifically designed to handle `HTTP GET` requests and provide additional flexibility for displaying results to users.
+Functions defined with the [onHttpGet](https://developer.4d.com/docs/API/guides/data-model#onhttpget-keyword) keyword and returning an instance of the [4D.OutgoingMessage](https://developer.4d.com/docs/API/OutgoingMessageClass) class, have a unique behavior when bound to events. Unlike standard functions, `onHttpGet functions` are specifically designed to handle `HTTP GET` requests and provide additional flexibility for displaying results to users.
 
 #### Example
 
@@ -542,7 +542,7 @@ For further details, refer to the [Dialog](../components/dialog.md) section.
         <br/><br/>
         <ul>
             <li><strong>Authentication</strong>: This action logs the user out of the rendered app<br/></li>
-            <li><strong>4D Code</strong>: This action allows you to call 4D function shared through the [WA SET CONTEXT](https://developer.4d.com/docs/fr/commands/wa-set-context) when running the qodly page inside a Web Area in a 4D Form</li>
+            <li><strong>4D Code</strong>: This action allows you to call 4D function shared through the [WA SET CONTEXT](https://developer.4d.com/docs/commands/wa-set-context) when running the qodly page inside a Web Area in a 4D Form</li>
         </ul>
     </Column.Item>
     <Column.Item width="40%">
@@ -574,7 +574,7 @@ Importantly, this customized feedback aligns with the application's business rul
 
 ### Toast Notifications
 
-When the `Provide Feedback` checkbox is enabled, it introduces a **hidden internal feedback element** into the web page, known as a **toast** notification. This element automatically showcases messages generated by the application code in response to events, using [dedicated Page functions](../../../QodlyinCloud/qodlyScript/WebFormClass.md) or by specifying them for `On Success` or `On Failure` in the Page Editor interface, for the case of standard actions.
+When the `Provide Feedback` checkbox is enabled, it introduces a **hidden internal feedback element** into the web page, known as a **toast** notification. This element automatically showcases messages generated by the application code in response to events, using [dedicated Page functions](https://developer.4d.com/docs/API/WebFormClass) or by specifying them for `On Success` or `On Failure` in the Page Editor interface, for the case of standard actions.
 
 :::info
 If this feature is not enabled, feedback sent from the backend will not be displayed within the user interface.
@@ -591,11 +591,11 @@ For example, in the context of a technical document, regular users may require f
 
 Three tiers of feedback are accessible and will be displayed as colored **toasts**:
 
-- **Informative Messages**: Dispatches informative messages when invoked, either directly through the [`setMessage()`](../../../QodlyinCloud/qodlyScript/WebFormClass.md#setmessage) function or by specifying them in the `On Success` field within the event section associated with a standard action.
+- **Informative Messages**: Dispatches informative messages when invoked, either directly through the [`setMessage()`](https://developer.4d.com/docs/API/WebFormClass#setmessage) function or by specifying them in the `On Success` field within the event section associated with a standard action.
 
-- **Cautionary Messages**: Sends out cautionary messages, and these messages are exclusively triggered using the [`setWarning()`](../../../QodlyinCloud/qodlyScript/WebFormClass.md#setwarning) function.
+- **Cautionary Messages**: Sends out cautionary messages, and these messages are exclusively triggered using the [`setWarning()`](https://developer.4d.com/docs/API/WebFormClass#setwarning) function.
 
-- **Error Messages**: Issues error messages when invoked, either directly through the [`setError()`](../../../QodlyinCloud/qodlyScript/WebFormClass.md#seterror) function or by specifying them in the `On Failure` field within the event section associated with a standard action.
+- **Error Messages**: Issues error messages when invoked, either directly through the [`setError()`](https://developer.4d.com/docs/API/WebFormClass#seterror) function or by specifying them in the `On Failure` field within the event section associated with a standard action.
 
 <br/>
 

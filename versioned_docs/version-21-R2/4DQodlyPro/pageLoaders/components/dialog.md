@@ -170,7 +170,7 @@ Enhance the Dialog component to align with your application's requirements using
 
 ## Server-Side Interaction
 
-Every dialog is uniquely named, which acts as its server-side reference for server-side interactions. This allows you to control the Dialog's behavior, such as [hiding](../../../QodlyinCloud/qodlyScript/WebFormItemClass.md#hide), [showing](../../../QodlyinCloud/qodlyScript/WebFormItemClass.md#show), [adding CSS classes](../../../QodlyinCloud/qodlyScript/WebFormItemClass.md#addcssclass), or [removing CSS classes](../../../QodlyinCloud/qodlyScript/WebFormItemClass.md#removecssclass) from it.
+Every dialog is uniquely named, which acts as its server-side reference for server-side interactions. This allows you to control the Dialog's behavior, such as [hiding](https://developer.4d.com/docs/API/WebFormItemClass#hide), [showing](https://developer.4d.com/docs/API/WebFormItemClass#show), [adding CSS classes](https://developer.4d.com/docs/API/WebFormItemClass#addcssclass), or [removing CSS classes](https://developer.4d.com/docs/API/WebFormItemClass#removecssclass) from it.
 
 :::tip
 Employing the `.show()` method triggers the `On Open` event, whereas utilizing `.hide()` triggers the `On Close` event.
