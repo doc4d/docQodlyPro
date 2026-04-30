@@ -106,7 +106,8 @@ Thank you for helping us improve! 🚀
           includeCurrentVersion: isProduction ? false : true, // false for prod only
           versions: 
             {
-              '21-R2': {label: '21 R2 BETA', banner: 'none',},
+              '21-R3': {label: '21 R3 BETA', banner: 'none',},
+              '21-R2': {label: '21 R2', banner: 'none',},
               '21': {label: '21', banner: 'none',},
             },
         },

@@ -1,0 +1,169 @@
+{
+  "GettingStarted": [
+    {
+      "type": "doc",
+      "id": "4DQodlyPro/gettingStarted"
+    },
+    {
+      "type": "doc",
+      "id": "4DQodlyPro/release-notes"
+    }
+  ],
+  "Develop": [
+    {
+      "type": "doc",
+      "id": "4DQodlyPro/qodlyStudioInterface"
+    },
+    {
+      "type": "category",
+      "label": "Pages",
+      "items": [
+        "4DQodlyPro/pageLoaders/pageLoaderOverview",
+        {
+          "type": "category",
+          "label": "Components",
+          "items": [
+            "4DQodlyPro/pageLoaders/components/componentsBasics",
+            "4DQodlyPro/pageLoaders/components/uploadCustomComponents",
+            "4DQodlyPro/pageLoaders/components/button",
+            "4DQodlyPro/pageLoaders/components/checkbox",
+            "4DQodlyPro/pageLoaders/components/datatable",
+            "4DQodlyPro/pageLoaders/components/dialog",
+            "4DQodlyPro/pageLoaders/components/fileupload",
+            "4DQodlyPro/pageLoaders/components/icon",
+            "4DQodlyPro/pageLoaders/components/image",
+            "4DQodlyPro/pageLoaders/components/matrix",
+            "4DQodlyPro/pageLoaders/components/pageLoader",
+            "4DQodlyPro/pageLoaders/components/radio",
+            "4DQodlyPro/pageLoaders/components/rangeinput",
+            "4DQodlyPro/pageLoaders/components/selectbox",
+            "4DQodlyPro/pageLoaders/components/selectinput",
+            "4DQodlyPro/pageLoaders/components/stylebox",
+            "4DQodlyPro/pageLoaders/components/tabs",
+            "4DQodlyPro/pageLoaders/components/text",
+            "4DQodlyPro/pageLoaders/components/textinput"
+          ]
+        },
+        "4DQodlyPro/pageLoaders/craftedComponents",
+        "4DQodlyPro/pageLoaders/templates",
+        "4DQodlyPro/pageLoaders/date-time-formats",
+        "4DQodlyPro/pageLoaders/qodlySources",
+        {
+          "type": "category",
+          "label": "Events",
+          "items": [
+            "4DQodlyPro/pageLoaders/events/overview",
+            "4DQodlyPro/pageLoaders/events/eventsManagement",
+            "4DQodlyPro/pageLoaders/events/bindingActionToEvents"
+          ]
+        },
+        {
+          "type": "category",
+          "label": "States",
+          "items": [
+            "4DQodlyPro/pageLoaders/states/stateOverview",
+            "4DQodlyPro/pageLoaders/states/nonConditionalState",
+            "4DQodlyPro/pageLoaders/states/conditionalState"
+          ]
+        },
+        "4DQodlyPro/pageLoaders/styling",
+        "4DQodlyPro/rendering"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Coding and Debugging",
+      "items": [
+        "4DQodlyPro/coding",
+        "4DQodlyPro/debugging"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Roles And Privileges",
+      "items": [
+        "4DQodlyPro/roles/overview",
+        {
+          "type": "category",
+          "label": "Permissions",
+          "items": [
+            "4DQodlyPro/roles/permissionsOverview",
+            "4DQodlyPro/roles/datastorePermissions",
+            "4DQodlyPro/roles/dataClassPermissions",
+            "4DQodlyPro/roles/attributesPermissions",
+            "4DQodlyPro/roles/functionPermissions",
+            "4DQodlyPro/roles/modelEditorApproach"
+          ]
+        },
+        "4DQodlyPro/roles/includingPrivileges",
+        "4DQodlyPro/roles/example-of-configuration"
+      ]
+    },
+    {
+      "type": "doc",
+      "id": "4DQodlyPro/httpHandlers",
+      "label": "HTTP Handlers"
+    },
+    {
+      "type": "doc",
+      "id": "4DQodlyPro/localization",
+      "label": "Localization (i18n)"
+    },
+    {
+      "type": "doc",
+      "id": "4DQodlyPro/settings",
+      "label": "Settings"
+    },
+    {
+      "type": "link",
+      "label": "Data Explorer",
+      "href": "https://developer.4d.com/docs/Admin/dataExplorer"
+    }
+  ],
+  "Deploy": [
+    {
+      "type": "doc",
+      "id": "4DQodlyPro/deploy"
+    },
+    {
+      "type": "doc",
+      "id": "4DQodlyPro/rendering"
+    },
+    {
+      "type": "doc",
+      "id": "4DQodlyPro/force-login"
+    },
+    {
+      "type": "doc",
+      "id": "4DQodlyPro/license"
+    }
+  ],
+  "CustomComponent": [
+    {
+      "type": "doc",
+      "id": "Integrations/customComponent/overview"
+    },
+    {
+      "type": "doc",
+      "id": "Integrations/customComponent/setup"
+    },
+    {
+      "type": "doc",
+      "id": "Integrations/customComponent/structure"
+    },
+    {
+      "type": "category",
+      "label": "API Reference",
+      "items": [
+        {
+          "type": "category",
+          "label": "@ws-ui/webform-editor",
+          "items": [
+            "Integrations/customComponent/api-reference/webform-editor/v0.2.24",
+            "Integrations/customComponent/api-reference/webform-editor/v0.2.16"
+          ]
+        }
+      ]
+    }
+  ]
+}
