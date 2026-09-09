@@ -190,6 +190,79 @@ Formatting options may vary based on the specific data type of the attribute and
         </Column.Item>
 </Column.List>
 
+
+### Styled Text Support
+
+[Data Table](./datatable.md) and [Text](./text.md) components support **styled text contents**. Styled text is based upon specific HTML-like tags. 
+
+When styled text is supported, 4D interprets any `<SPAN>` HTM tags found in the area. When a Qodly source contains some styled text, it is correctly interpreted and displayed in the component on the Qodly page. On the other hand, if some styled text is added or modified from a Qodly page, it is correctly [interpreted and displayed in 4D forms](https://developer.4d.com/docs/FormObjects/propertiesText#multi-style). 
+
+The following tags are supported by [Data Table](./datatable.md) and [Text](./text.md) components:
+
+#### Font name
+
+```html
+<SPAN STYLE="font-family: DESDEMONA"> ... </SPAN>
+```
+
+#### Font size
+
+```html
+<SPAN STYLE="font-size: 20pt"> ... </SPAN>
+```
+
+#### Font style
+
+- Bold
+
+```html
+<SPAN STYLE="font-weight: bold"> ... </SPAN>
+```
+
+- Italic or normal
+
+```html
+<SPAN STYLE="font-style: italic"> ... </SPAN>
+<SPAN STYLE="font-style: normal"> ... </SPAN>
+```
+
+- Underline
+
+```html
+<SPAN STYLE="text-decoration: underline"> ... </SPAN>
+```
+
+- Strikethrough
+
+```html
+<SPAN STYLE="text-decoration:line-through">...</SPAN>
+```
+
+Note : The "strikethrough" style is not supported under macOS.
+
+#### Font colors
+
+```html
+<SPAN STYLE="color:green"> ... </SPAN>  or <SPAN STYLE="color:#006CCC">...</SPAN>
+```
+
+#### Background colors
+
+```html
+<SPAN STYLE="background-color:green"> ... </SPAN>
+```
+or
+```html
+<SPAN STYLE="background-color:#006CCC">...</SPAN>
+```
+
+**Color values**: For font color and background color attributes, the color value can be either the hexadecimal code for an RGB color, or the name of one of the 16 HTML colors defined for standard CSS by the W3C. 
+
+**Character reference** is supported. See https://developer.mozilla.org/en-US/docs/Glossary/Character_reference
+
+
+
+
 ## Data Integration
 
 This section serves as a fundamental introduction to the integration of Qodly Sources with components. It's essential to note that each component has its own dedicated section on its respective page, including the following subsections:

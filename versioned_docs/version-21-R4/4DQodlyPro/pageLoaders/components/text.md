@@ -147,6 +147,13 @@ The **Text** component's content can be dynamically bound to Qodly Sources throu
 Alternatively, you can establish the connection by dragging and dropping a qodlysource of type `text`, `number`, `date`, or `duration` onto the Page, resulting in the automatic addition of a Text component with the qodlysource bound to it.
 :::
 
+
+### Styled text support
+
+The **Text** component supports [**styled text**](./componentsBasics.md#styled-text-support): you can write and display HTML styles in the text contents of your qodly sources using `<SPAN>` tags. 
+
+
+
 ## Triggers and Events
 
 The **Text** component can respond to various events, enabling dynamic user experiences. Events that can trigger actions within the component include:

@@ -4,6 +4,11 @@ title: Release Notes
 ---
 
 
+## 4D 21 R4
+
+### Highlights
+
+- Data table and Text components now support [Styled text](./pageLoaders/components/componentsBasics.md#styled-text-support) in qodly sources. 
 
 ## 4D 21
 

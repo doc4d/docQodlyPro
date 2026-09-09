@@ -181,6 +181,10 @@ Common attributes for `onheaderclick` and `oncellclick`:
 |name| Text | The qodlysource of the column.|
 |row| Number | The number of the clicked row.|
 
+### Styled text support
+
+The **Data table** component supports [**styled text**](./componentsBasics.md#styled-text-support): you can write and display HTML styles in the text contents of your qodly sources using `<SPAN>` tags. 
+
 
 ## User Experience Features
 
@@ -193,7 +197,6 @@ The **DataTable** component provides a range of user-friendly features:
 - **Drag-and-Drop Column Movement**: Rearrange columns with ease <img src={require('./img/dataTable_rearrange.png').default} style={{borderRadius: '6px', height: '25px'}}/>.
 
 - **Selectable/Tabbable Rows**: Navigate and select rows using keyboard tabbing. 
-
 
 
 ## Customizing DataTable Styles
