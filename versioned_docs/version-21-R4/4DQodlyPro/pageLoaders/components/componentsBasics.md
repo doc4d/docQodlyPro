@@ -193,9 +193,9 @@ Formatting options may vary based on the specific data type of the attribute and
 
 ### Styled Text Support
 
-[Data Table](./datatable.md) and [Text](./text.md) components support **styled text contents**. Styled text is based upon specific HTML-like tags. 
+[Data Table](./datatable.md) and [Text](./text.md) components support **styled text contents**, based upon specific HTML tags. When styled text is supported, 4D interprets any `<SPAN>` HTML tags found in the area. 
 
-When styled text is supported, 4D interprets any `<SPAN>` HTM tags found in the area. When a Qodly source contains some styled text, it is correctly interpreted and displayed in the component on the Qodly page. On the other hand, if some styled text is added or modified from a Qodly page, it is correctly [interpreted and displayed in 4D forms](https://developer.4d.com/docs/FormObjects/propertiesText#multi-style). 
+When a Qodly source contains some styled text, it is correctly interpreted and displayed in the component on the Qodly page. And, if some styled text is added or modified from a Qodly page, it is correctly [interpreted and displayed in 4D forms](https://developer.4d.com/docs/FormObjects/propertiesText#multi-style). 
 
 The following tags are supported by [Data Table](./datatable.md) and [Text](./text.md) components:
 

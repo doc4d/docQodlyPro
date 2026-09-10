@@ -8,7 +8,7 @@ title: Release Notes
 
 ### Highlights
 
-- Data table and Text components now support [Styled text](./pageLoaders/components/componentsBasics.md#styled-text-support) in qodly sources. 
+- [Data table](./pageLoaders/components/datatable.md) and [Text](./pageLoaders/components/text.md) components now support [styled text contents](./pageLoaders/components/componentsBasics.md#styled-text-support). 
 
 ## 4D 21
 
