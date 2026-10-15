@@ -47,49 +47,6 @@ npm i
 ## Configuring Environment 
 
 
-To ensure the smooth operation of the Standalone Page Editor, you can choose between running a Cloud instance or a 4D instance. Each setup has specific requirements for setting up and running your development environment.
-
-### Run a Cloud Instance
-
-To utilize a Cloud instance of the Qodly platform, it's essential to configure environment variables that allow your custom components to communicate securely:
-
-- API_KEY: Bound to the Administration port, crucial for accessing administrative features securely.
-
-- PROXY_SERVER: Specifies the API endpoint, critical for connecting your application to the backend services.
-
-
-These variables should be set within environment configuration files located at the root of your project, adjacent to package.json. Here's how to do it:
-
-1. **Create Environment Files**: Depending on your deployment stage, you might have `.env.development` for development settings and `.env.production` for production settings.
-
-  <img src={require('./img/envDevelopment.png').default} style={{borderRadius: '6px'}} />
-
-2. **Add Variables to the Files**:
-
-  ```bash
-  API_SECURE= true
-  API_KEY=<your_api_key>
-  PROXY_SERVER=<your_proxy_server>
-  ```
-
-Ensure to keep your API_KEY secure and never expose it in client-side code where unauthorized users could access it.
-
-:::tip
-
-<Column.List align="center" justifyContent="between">
-    <Column.Item width="55%">
-        Ensure the API_KEY is of type "Administration" to access administrative features securely. This key should never be exposed in client-side code to prevent unauthorized access.
-    </Column.Item>
-    <Column.Item width="40%">
-        <img src={require('./img/APIAdministration.png').default} style={{borderRadius: '6px'}} />
-    </Column.Item>
-</Column.List>
-
-:::
-
-
-### Run a 4D Instance
-
 To operate a 4D instance effectively, you need to run a 4D Web Server alongside your React project. Failing to do so can lead to connection issues that prevent the Page Editor from functioning correctly.
 
 

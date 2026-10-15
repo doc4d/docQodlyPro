@@ -150,23 +150,9 @@ To assign one or multiple privileges to a role:
 For instance, a `Sales Manager` role might possess privileges like `ManageBookings` and `ViewReports`, granting them the ability to analyze booking trends and monitor revenue for informed decision-making. Similarly, a `Content Manager` role could receive the privilege `ManageContent`.
 :::
 
-## Assigning Roles
+## Assigning Roles and Privileges
 
-Through the **Qodly Management Console** of your application, you can assign roles to users across various environments—`development`, `staging`, or `production`—each with its own configuration.
-
-:::info
-Roles configured in the development environment may differ from those in production. It's essential to manage roles appropriately in each environment to ensure consistent access control.
-:::
-
-To assign a role to a user in the `development` environment:
-
-1. Go to the `Teams` tab to see a list of available users, each linked to their respective roles.
-2. Click the `Add User` button in the upper-right corner to add a new user.
-3. Complete the form that appears with the necessary user data.
-4. Find a dropdown menu labeled `Profile` towards the end of the form, displaying roles added from Qodly Studio under the `Roles and Privileges` section.
-5. Select and assign the appropriate role to the new user from the list, providing specific privileges associated with that role.
-
-<img src={require('./img/addingRolesviaCloud.png').default} style={{borderRadius: '6px'}} />
+Roles and privileges are assigned to **user sessions** using the [`Session.setPrivileges()`](https://developer.4d.com/docs/API/SessionClass#setprivileges) function of the `4D.Session` class.
 
 
 

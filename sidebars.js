@@ -106,8 +106,7 @@ const sidebars = {
 						'4DQodlyPro/roles/datastorePermissions',
 						'4DQodlyPro/roles/dataClassPermissions',
 						'4DQodlyPro/roles/attributesPermissions',
-						'4DQodlyPro/roles/functionPermissions',
-						'4DQodlyPro/roles/modelEditorApproach'
+						'4DQodlyPro/roles/functionPermissions'
 					]
 				},
 				'4DQodlyPro/roles/includingPrivileges',
