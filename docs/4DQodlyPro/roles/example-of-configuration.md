@@ -35,7 +35,7 @@ The following personaes are identified, along with their access:
 
 <img src={require('./img/example-users.png').default} style={{borderRadius: '6px', width:'70%'}} />
 
-Once a Qodly app user is authentified, they can only run the actions allowed for the assigned role (because the privileges assigned to this role have the permissions to run specific actions on some resources). 
+Users will have their role assigned to their session using the [`Session.setPrivileges()`](https://developer.4d.com/docs/API/SessionClass#setprivileges) function as soon as they are [authentified](https://developer.4d.com/docs/REST/authUsers). Once a user is authentified, they can only run the actions allowed for the assigned role (because the privileges assigned to this role have the permissions to run specific actions on some resources). 
 
 **X** will use the public access without any role and will be only able to run actions allowed for the public access.​
 
