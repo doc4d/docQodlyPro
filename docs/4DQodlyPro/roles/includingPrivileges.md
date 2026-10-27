@@ -5,43 +5,21 @@ title: Including Privileges
 
 import Column from '@site/src/components/Column'   
 
-## Understanding Privilege Inclusion 
+## Overview
 
-Privilege inclusion stands as a foundational concept in access control, involving the nesting of one or more privileges within another to create a hierarchical structure. This approach enables the inheritance of permissions, simplifying the management of access rights.
-
-## Benefits of Privilege Inclusion
-
-Privilege inclusion provides substantial advantages, enhancing the efficiency and flexibility of access control:
-
-|Benefits | Purpose | Practical Application|
-|---------|------------|----------------------|
-| **Granular Control** |Empowers administrators for precise user access control.|In a healthcare system, it's used to manage access to patient records with healthcare providers granted access to only relevant medical information, ensuring fine-tuned control over sensitive data.|
-| **Efficient Management**|Hierarchical privileges reduce redundancy in permission assignments.|In large enterprises, it's used to set overarching permissions for departments or roles. For example, a marketing team might inherit common access rights without individual configurations.|
-| **Flexibility and Adaptability**|Enables a flexible and adaptable access control model.|In a rapidly evolving technology company, it's used to integrate access rights for new tools without disrupting existing configurations.|
-| **Nuanced Access Restrictions**|Allows for nuanced access restrictions.|In a financial institution, it's used to enforce specific access restrictions for different departments. For instance, the finance team might have additional access rights to sensitive financial data, while other departments have restricted access.|
+Privilege inclusion lets you combine existing privileges to build a reusable access-control structure.
+An included privilege contributes its permissions to the privilege that includes it, helping avoid duplicate configurations.
+This makes it easier to manage access consistently as application needs evolve.
+Privileges can be assigned to roles to define what each group of users can do.
 
 
-## Including Privilege Use Case
+For example, `ManageFinancials` can include `ManageReports` to bring reporting permissions together with financial-specific access.
+The resulting privilege can then be assigned to the `Financial Manager` role.
 
-### Background
+This approach keeps shared permissions in one place while allowing specialized privileges to add their own access rules. Use privilege inclusion to simplify administration while keeping access scoped to the needs of each role.
+For details, see the 4D documentation on [privileges and roles](https://developer.4d.com/docs/ORDA/privileges#privileges-and-roles).
 
-The `ManageReports` privilege grants the `Sales Manager` role access to the `Reporting` dataclass, with the exception of the delete permission:
-
-<img src={require('./img/IncludePrivilege1.png').default} style={{borderRadius: '6px'}} />
-
-However, the addition of the `ManageFinancials` privilege introduces specialized restrictions for anyone outside the financial department, including access to `netProfitMargin` and `totalExpenses` attributes and deletion permissions within the `Reporting` dataclass:
-
-<img src={require('./img/IncludePrivilege2.png').default} style={{borderRadius: '6px'}} />
-
-### Intra-Privilege Relationships
-
-In a `Financial Manager` role, two privileges exist: `ManageReports` for reviewing and creating reports, and `ManageFinancials` for deleting reports or accessing sensitive data. 
-
-In this case, the `ManageFinancials` privilege operates within the constraints set by the `ManageReports` privilege, adding supplementary permissions, ensuring nuanced control over data access.
-
-Given the structured inheritance of permissions, an efficient approach consolidates these into a singular privilege. By including `ManageReports` within `ManageFinancials`, a unified privilege is formed, providing the `Financial Manager` with streamlined permissions. 
-
-### Including Privilege Configuration
+## Including Privilege Configuration
 
 To include the `ManageReports` privilege within the scope of `ManageFinancials`:
 

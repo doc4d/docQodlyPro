@@ -4,9 +4,9 @@ title: Example of configuration
 ---
 import Column from '@site/src/components/Column'
 
-This section is a tutorial that will show you how to configure roles and privileges for a HealthCare application handling patients and appointments, including confidential data. 
-
-It includes the support of both **public** and **authenticated** [application accesses](../../QodlyinCloud/console/resourceMonitoring.md#application-access). 
+This example shows how to configure roles and privileges for a healthcare application that handles patients, appointments, and confidential data.
+The application authenticates identities in its own `authentify()` function and calls [`Session.setPrivileges()`](https://developer.4d.com/docs/API/SessionClass#setprivileges) to assign roles to each session.
+The rules below explain why each permission grants or denies access; see 4D's [privilege configuration rules](https://developer.4d.com/docs/ORDA/privileges#inherited-permissions) for details.
 
 
 ## Application overview
@@ -25,26 +25,11 @@ The `AppSettings` dataclass is used only by the administrator to set up applicat
 
 :::
 
-### Users
+### Identities and roles
 
-The following personaes are identified, along with their access:
+The application defines its own identities and validates them in its `authentify()` function. After authentication, this function calls `Session.setPrivileges()` to assign the appropriate role to the session. See the 4D documentation for [`authentify()`](https://developer.4d.com/docs/REST/authUsers#function-authentify) and [`Session.setPrivileges()`](https://developer.4d.com/docs/API/SessionClass#setprivileges).
 
 <img src={require('./img/example-personae.png').default} style={{borderRadius: '6px', width:'70%'}} />
-
-**Mary** and **Arthur** are registered as [Qodly users](../../QodlyinCloud/console/userAccountManagement.md#users-page) and use the authenticated endpoint. The administrator [assigns them a role in the console](../../QodlyinCloud/console/userAccountManagement.md#edit-user-details).​
-
-<img src={require('./img/example-users.png').default} style={{borderRadius: '6px', width:'70%'}} />
-
-Users will have their role assigned to their session using the [`Session.setPrivileges()`](https://developer.4d.com/docs/API/SessionClass#setprivileges) function as soon as they are [authentified](https://developer.4d.com/docs/REST/authUsers). Once a user is authentified, they can only run the actions allowed for the assigned role (because the privileges assigned to this role have the permissions to run specific actions on some resources). 
-
-**X** will use the public access without any role and will be only able to run actions allowed for the public access.​
-
-:::note
-
-The developer is free to implement an authentication for public users and to assign them a role. This case is not covered here.​
-
-:::
-
 
 ### Actions
 
@@ -58,25 +43,25 @@ We want to configure the following accesses:
 <img src={require('./img/example-target.png').default} style={{borderRadius: '6px', width:'70%'}} />
 
 
-## Configuring registered users
+## Configuring access
 
 ### Protecting all data
 
-By default in new Qodly applications, **no permissions** are set up, which means that all data are available for any Qodly app registered user (Reminder: public endpoint is disabled by default).​ Thus, the initial configuration is:
+In this example, **Restrict Access By Default** is off, so resources without an explicit permission are accessible. The initial configuration is:
 
 <img src={require('./img/example-startup.png').default} style={{borderRadius: '6px', width:'80%'}} />
 
 The first step in activating safety is to **protect all data** by default. Accesses will then be opened for each resource.  
 
-1. Create a **None** privilege with a granted **Read** action on the Datastore​. 
+1. Create a **None** privilege and grant it **Read** access on the datastore.
 
 <img src={require('./img/example-config1.png').default} style={{borderRadius: '6px', width:'100%'}} />
 
-By the inheritance principles, the **whole datastore** is then protected. 
+The datastore permission is inherited by every dataclass. Since no role receives **None**, read access to the dataclasses is denied by default.
 
 <img src={require('./img/example-none.png').default} style={{borderRadius: '6px', width:'80%'}} />
 
-2. Do **never** assign this privilege to any role, so that the whole datastore will always remain protected by default​. 
+2. Never assign **None** to a role. As an alternative, turn on **Restrict Access By Default** in `roles.json`; resources without an explicit permission are then denied, so the **None** lock privilege is unnecessary. See 4D's [restriction modes](https://developer.4d.com/docs/ORDA/privileges#restriction-modes).
 
 ### Creating the viewPatient privilege
 
@@ -91,17 +76,17 @@ By the inheritance principles, the **whole datastore** is then protected.
 
 <img src={require('./img/example-viewpatient.png').default} style={{borderRadius: '6px', width:'80%'}} />
 
-However, this privilege will give access to all patient data to the *Secretary* role, including by default any confidential. You still need to restrict access to this level of information.  
+The **Patients** dataclass permission replaces the datastore permission, so a session with **viewPatient** can read patient data without **None**. This also includes the `confidentialInfo` attribute unless a separate attribute permission is defined.
 
 ### Creating the viewConfidentialInfo privilege
 
 Only the *Doctor* role can view the patient's confidential data (gathered in a *confidentialInfo* attribute). 
 
-1. Create the *viewConfidentialInfo* privilege with a granted **Read** action on the `Patients.confidentialInfo` attribute.​ 
+1. Create the *viewConfidentialInfo* privilege with **Read** access on the `Patients.confidentialInfo` attribute.
 
 <img src={require('./img/example-config4.png').default} style={{borderRadius: '6px', width:'100%'}} />
 
-2. Assign it to the *Doctor* role (see [roles](#roles) below). This will exclude all other roles). ​
+2. Assign it to the *Doctor* role (see [roles](#roles) below). Attribute permissions are added to the parent dataclass permission, so reading `confidentialInfo` requires **both** **viewPatient** and **viewConfidentialInfo**. The *Secretary* role has only **viewPatient**, so it cannot read that attribute.
 
 <img src={require('./img/example-viewsecretinfo.png').default} style={{borderRadius: '6px', width:'80%'}} />
 
@@ -119,26 +104,29 @@ Here are the corresponding role definitions.
 
 
 
-## Configuring public access 
+### Allowing appointment reads
 
-By default in new Qodly applications, the public access is **disabled**. The public access is the access granted for public users (like **X**) without any role.
-
-1. [Activate the Public access explicitely](../../QodlyinCloud/console/resourceMonitoring.md#3-public-url-development-environment-only) in the console. 
-
-
-2. Allow the *guest* privilege to read the appointments. 
+Grant the built-in **guest** privilege **Read** access to the `Appointments` dataclass.
 
 <img src={require('./img/example-config5.png').default} style={{borderRadius: '6px', width:'100%'}} />
 
 <img src={require('./img/example-guest.png').default} style={{borderRadius: '6px', width:'80%'}} />
 
 
-By default, **all users, including public users** have the [*guest* privilege](./datastorePermissions.md#introducing-the-guest-privilege). By simply allowing the *guest* privilege to read appointments, we allow all users, registered and not registered, to read the appointments. 
+The `Appointments` dataclass permission replaces the datastore-level **None** permission. Because every session has the built-in [**guest** privilege](./datastorePermissions.md#introducing-the-guest-privilege), all sessions can read appointments.
 
 ## The final picture
 
 Here is a complete overview of the roles and privileges for our HealthCare application:
 
 <img src={require('./img/example-full.png').default} style={{borderRadius: '6px', width:'80%'}} />
+
+### A common pattern
+
+A common configuration grants broad access through a **manager** privilege, then restricts one dataclass: for example, the `Salaries` dataclass requires the **payroll** privilege. A session must have **payroll** to access `Salaries`, because a dataclass permission replaces the datastore permission; **manager** continues to grant access to other dataclasses.
+
+### Recommended practice
+
+Grant access through roles. Create an administration role that includes every privilege except **None**, and add each new privilege to that role when it is created. With **Restrict Access By Default** off, review the **Detailed Permission Review** for every role after each permission change to confirm its effective access. See the 4D documentation on [roles, privileges, and permission rules](https://developer.4d.com/docs/ORDA/privileges#privileges-and-roles).
 
 

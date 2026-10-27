@@ -15,7 +15,6 @@ Make sure the ["force login" mode](https://developer.4d.com/docs/REST/authUsers#
 
 You can also set this option directly in the [**roles.json** file](https://developer.4d.com/docs/ORDA/privileges#rolesjson-file).
 
-You just need then to implemented the [`authentify()`](https://developer.4d.com/docs/REST/authUsers#function-authentify) function in the datastore class and call it from the Qodly page. A licence will be consumed only when the user is actually logged.
 
 
 :::note Compatibility
@@ -28,8 +27,6 @@ When the legacy login mode ([deprecated as of 4D 20 R6](https://blog.4d.com/forc
 
 In a simple Qodly page with login/password inputs, a "Submit" button calls the following `authentify()` function we have implemented in the DataStore class:
 
-<Tabs>
-  <TabItem value="4D" label="4D" default>
     ```4d
 	exposed Function authentify($credentials : Object) : Text
 		var $salesPersons : cs.SalesPersonsSelection
@@ -51,31 +48,6 @@ In a simple Qodly page with login/password inputs, a "Submit" button calls the f
 			return "Wrong user"
 		End if
 	```
-  </TabItem>
-  <TabItem value="qs" label="QodlyScript">
-    ```qs
-    exposed function authentify(credentials : Object) : string
-		var salesPersons : cs.SalesPersonsSelection
-		var sp : cs.SalesPersonsEntity
-
-		salesPersons=ds.SalesPersons.query("identifier = :1", credentials.identifier)
-		sp = salesPersons.first()
-
-		if (sp!=Null)
-			if (verifyPasswordHash(credentials.password, sp.password))
-				session.clearPrivileges()
-				session.setPrivileges("") //guest session
-
-				return "Authentication successful"
-			else
-				return "Wrong password"
-			end
-		else
-			return "Wrong user"
-		end
-    ```
-  </TabItem>
-</Tabs>
 
 This call is accepted and as long as the authentication is not successful, `Session.setPrivileges()` is not called, thus no license is consumed. Once `Session.setPrivileges()` is called, a 4D client licence is used and any REST request is then accepted.
 
