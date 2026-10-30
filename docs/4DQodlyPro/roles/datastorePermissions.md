@@ -5,17 +5,9 @@ title: Datastore Permissions
 
 import Column from '@site/src/components/Column'   
 
-## Purpose and Scope
+## Overview
 
-Datastore permissions are essential for controlling access to your entire **Datastore**. By configuring these permissions, you establish a primary defense mechanism against unauthorized access and alterations to critical mission data.
-
-## Risk of Unrestricted Access
-
-Without proper setup, your application is vulnerable to unregulated access. In such scenarios, every user gains unrestricted access to all **datastore resources**, posing significant risks.
-
-To illustrate, imagine an unauthorized user attempting an HTTP request to the **Package dataclass** REST API endpoint. This unchecked data access allows unauthorized actions, including accessing confidential user information, and poses a uniform risk across all dataclasses.
-
-<img src={require('./img/unrestrictedAccess.png').default} style={{borderRadius: '6px'}} />
+Datastore permissions are essential for controlling access to your entire **Datastore**. 4D offers several strategies to [ensure the security of the data in your datastore](https://developer.4d.com/docs/ORDA/privileges#restriction-modes). 
 
 ## Configuring Datastore Permissions 
 
@@ -32,15 +24,16 @@ The <img src={require('./img/datastore.png').default} style={{borderRadius: '6px
 
 To address the risks of unrestricted access, an approach called `All Data Inaccessible by Default` is employed. This strategy restricts access to the entire datastore by default, gradually expanding access to specific dataclasses through other privileges achieved by applying [Dataclasses Permissions](dataClassPermissions.md).
 
-### Introducing Restricted Privilege  
 
-At the core of the datastore lockdown strategy lies the concept of the `Restricted` privilege. This privilege acts as a safeguard, restricting all actions on the datastore and rendering it inaccessible until specific permissions are meticulously set up.
+You have two ways to lock everything: 
 
-:::info
-This ensures that users, even without defined roles or privileges, cannot access any resources within the datastore.
-:::
+1. Turn on **Restrict Access By Default**, or
+2. Create a privilege (e.g. "none"), create a permission "ds", check every action, and never add this privilege to any role (the administration role included). 
 
-### Configuring Permissions  
+Then open gradually with permissions on dataclasses and functions; login function is granted to `guest`. 
+
+These strategies are [discussed in the 4D documentation](https://developer.4d.com/docs/ORDA/privileges#restriction-modes). 
+
 
 After establishing a privilege like `Restricted`, you assign permissions to the datastore, covering a range of actions from `Read` to `Execute`.
 
@@ -48,43 +41,36 @@ After establishing a privilege like `Restricted`, you assign permissions to the 
 
 <br/><br/>
 
-:::info
-By applying all permissions to the `ds` resource within the Restricted privilege and not assigning it to any role, you prevent malicious access attempts. This safeguard transforms the application into a secure vault.
-:::
-
-Attempting to access the REST API endpoints will result in a `No permission to read for the Package dataclass` response, a rule that extends across all dataclasses.
-
-<img src={require('./img/restrictedAccess.png').default} style={{borderRadius: '6px'}} />
 
 ## Full Access to Gradual Restriction
 
-Alternatively, the `Guest` privilege provides another strategy for managing unauthorized users. This privilege allows full access to the entire datastore by default, with specific resources being restricted through other privileges achieved by applying [Dataclasses Permissions](dataClassPermissions.md).
+Alternatively, the `guest` privilege provides another strategy for managing unauthorized users. This privilege allows full access to the entire datastore by default, with specific resources being restricted through other privileges achieved by applying [Dataclasses Permissions](dataClassPermissions.md).
 
 
 ### Introducing the Guest Privilege  
 
-When a role lacks specific privileges, the `Guest` privilege is assigned to that `Session`. This allows users without defined privileges to access non-restricted resources while preventing potentially harmful activities with other resources, ensuring that users interact within well-defined boundaries.
+When a role lacks specific privileges, the `guest` privilege is assigned to that `Session`. This allows users without defined privileges to access non-restricted resources while preventing potentially harmful activities with other resources, ensuring that users interact within well-defined boundaries.
 
 :::info
-The `Guest` privilege grants access to all resources if no explicit permissions are in place.
+The `guest` privilege grants access to all resources if no explicit permissions are in place.
 :::
 
 ### Configuring the Guest Privilege  
 
-The `Guest` privilege is established in the `Privileges` tab by default, ready to welcome users who have not yet established a formal identity.
+The `guest` privilege is established in the `Privileges` tab by default, ready to welcome users who have not yet established a formal identity.
 
 <img src={require('./img/guestPrivilege.png').default} style={{borderRadius: '6px'}} />
 
 ### Configuring Read Access
 
-To grant read access to the `Guest` privilege, follow these steps:
+To grant read access to the `guest` privilege, follow these steps:
 
 1. Remove complete permissions control over the Datastore from the `Restricted` privilege. 
-2. Assign the Read permission specifically to the datastore within the `Guest` privilege, thereby endowing it with the capability of read-only access.
+2. Assign the Read permission specifically to the datastore within the `guest` privilege, thereby endowing it with the capability of read-only access.
 
 <img src={require('./img/readAccessGuestPrivilege.png').default} style={{borderRadius: '6px'}} />
 
-By making this change, the `Guest` privilege now allows users to access a wealth of data, including details about flights, hotels, and activities, while ensuring that critical information remains safeguarded against unauthorized modifications.
+By making this change, the `guest` privilege now allows users to access a wealth of data, including details about flights, hotels, and activities, while ensuring that critical information remains safeguarded against unauthorized modifications.
 
 <img src={require('./img/packages.png').default} style={{borderRadius: '6px'}} />
 
@@ -100,7 +86,7 @@ To balance data accessibility and security, the next crucial step is to utilize 
 
 ## Guest Inherited Permission
 
-Permissions of the `Guest` privilege are automatically inherited across various privileges. This parallels the behavior observed in the `Restricted` privilege, where the capability of reading from the **Datastore** is evident.
+`guest` permissions are [granted to every session](https://developer.4d.com/docs/ORDA/privileges#guest-privilege). 
 
 <img src={require('./img/inheritedPermissions.png').default} style={{borderRadius: '6px'}} />
 

@@ -5,7 +5,6 @@ title: Function Permissions
 
 import Column from '@site/src/components/Column'   
 
-## Purpose and Scope
 
 Function-level permissions control access to custom functions defined within the Model. These functions can perform actions such as managing bookings, generating invoices, and handling reservations.
 
@@ -79,78 +78,6 @@ After the function concludes, the temporary elevation from the `Promote` permiss
 
 <br/> 
 
-:::tip
-Refer to the use case of the [`Promote`](#promote-permission-use-case) permission for detailed configuration information.
-:::
-
-
-## Strategies 
-
-### Max Restriction to Gradual Expansion
-
-To control function execution, the **DataStore** level is configured exclusively for the `Restricted` privilege, ensuring that only roles with this privilege can execute functions, thus preventing any unauthorized access.
-
-<img src={require('./img/functionPermission_maxRestriction.png').default} style={{borderRadius: '6px'}} />
-
-<br/><br/>
-
-:::info
-
-<Column.List align="center" justifyContent="between">
-    <Column.Item width="65%">
-        Hovering over the <img src={require('./img/i.png').default} style={{borderRadius: '6px', width:'3%'}} />  icon reveals that all functions throughout the model — encompassing DataStore, Dataclasses, Entity selections, and Entities — have the execute permission for the Restricted privilege.
-    </Column.Item>
-    <Column.Item width="30%">
-        <img src={require('./img/functionPermission_maxRestriction2.png').default} style={{borderRadius: '6px'}} />
-    </Column.Item>
-</Column.List>
-
-:::
-
-However, to accommodate scenarios where the `Agent` role needs to execute functions, such as the `book` function within the `roomOptions` Entity class, a gradual expansion involves adding the `book` function resource and checking the execute permission. 
-
-<img src={require('./img/functionPermission_maxRestriction3.png').default} style={{borderRadius: '6px'}} />
-
-<br/><br/>
-
-:::info 
-In this context, the `bookRoom` privilege overrides function permissions set at the **DataStore** level (`Restricted`).
-:::
-
-### Full Access to Gradual Restriction
-
-If no `Execute` permission is set at any level, it grants full access to all functions defined throughout the Model. Gradual restriction involves using other privileges to restrict specific function execution, as seen in the `Employee` DataClass, where the `register()` function execution is restricted to specific privileges.
-
-
-
-## Promote Permission Use Case
-
-### Scenario Overview
-
-In a travel agency's system, dynamic pricing analysis recalculates travel package prices based on demand, seasonal trends, and competitor pricing. Key roles include:
-
-- The `Sales Manager` role fully controls Read access to the `Pricing` Dataclass, including the execution of its functions (Dataclass functions, entity functions, and entity selection functions), such as the `analyzePricing` function, to ensure confidentiality.
-
-- Although the `Agent` role is restricted from accessing the `Pricing` Dataclass, there are specific scenarios where the `Agent` may need to utilize the `analyzePricing` function to conduct a pricing analysis in response to special requests.
-
-### Promote Permission Configuration
-
-If an `Agent` receives a special request, they need `Execute` permission for the `analyzePricing` function to generate a customized pricing quote. This allows users with the `Agent` role to directly execute the function.
-
-<img src={require('./img/functionPermission_maxRestriction5.png').default} style={{borderRadius: '6px'}} />
-
-However, due to restricted access to the `Pricing` Dataclass limited to the `Sales Manager` role:
-
-<img src={require('./img/functionPermission_maxRestriction6.png').default} style={{borderRadius: '6px'}} />
-
-Executing the function code attempting to `Read` data from it would result in a `No permission to read for the Pricing dataclass` error.
-
-Therefore, It becomes essential to include `Promote` permission for the `analyzePricing` function within the `ManageFinancials` privilege:
-
-<img src={require('./img/functionPermission_maxRestriction7.png').default} style={{borderRadius: '6px'}} />
-
-<br/><br/>
-
 :::info
 <Column.List align="center" justifyContent="between">
     <Column.Item width="65%">
@@ -162,8 +89,5 @@ Therefore, It becomes essential to include `Promote` permission for the `analyze
 </Column.List>
 :::
 
-This configuration explicitly specifies that when the `analyzePricing` function is executed within a session holding the `Agent` role, which lacks permission for the `Pricing` resource, it temporarily integrates the `ManageFinancials` privilege into that session during function execution. This temporary elevation allows the function to be executed without granting permanent access.
 
-:::tip
-Add the `Execute` permission in the privilege associated with the role that needs to directly perform the function. Meanwhile, the `Promote` permission is configured in the privilege that grants broader control over the resources involved in the function, providing a temporary elevation of privileges during the function's execution.
-:::
+

@@ -40,6 +40,3 @@ To address this issue, refine the attribute permissions to restrict access to se
 
 By setting attribute permissions in the `ManageFinancials` privilege, you allow users with the `ManageReports` privilege to access the Reporting dataclass while restricting access to confidential attributes like `netProfitMargin` and `totalExpenses`.
 
-<img src={require('./img/attributePermissions2.png').default} style={{borderRadius: '6px'}} />
-
-In the response, the presence of `__INVALID: 1` indicates that the attribute is marked as invalid, signaling that the user lacks the necessary permissions to access or modify it.
